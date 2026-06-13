@@ -23,28 +23,31 @@ export default function Contacto() {
 
   return (
     <>
-      {/* Page hero (deep-blue) */}
-      <section className="relative overflow-hidden bg-[#0A2E5C] px-6 pt-40 pb-20">
+      {/* Page hero (light) */}
+      <section className="relative overflow-hidden bg-[#F2F6FC] px-6 pt-40 pb-20">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-24 -top-32 h-[32rem] w-[32rem] rounded-full bg-[#2C7BE5]/25 blur-[110px]" />
+          <div className="absolute -right-24 -top-32 h-[32rem] w-[32rem] rounded-full bg-[#2C7BE5]/10 blur-[110px]" />
           <div
-            className="absolute inset-0 opacity-[0.06]"
+            className="absolute inset-0"
             style={{
               backgroundImage:
-                'linear-gradient(#EAF1FB 1px, transparent 1px), linear-gradient(90deg, #EAF1FB 1px, transparent 1px)',
+                'linear-gradient(#0A2E5C 1px, transparent 1px), linear-gradient(90deg, #0A2E5C 1px, transparent 1px)',
               backgroundSize: '56px 56px',
+              maskImage: 'radial-gradient(ellipse at top right, black, transparent 70%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at top right, black, transparent 70%)',
+              opacity: 0.05,
             }}
           />
         </div>
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#5BC8E8]">
+            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#C25E00]">
               Contacto
             </span>
-            <h1 className="mt-3 max-w-3xl font-archivo text-5xl font-extrabold leading-[1.04] tracking-tight text-[#EAF1FB] sm:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-archivo text-5xl font-extrabold leading-[1.04] tracking-tight text-[#0A2E5C] sm:text-6xl">
               Vamos falar do seu projeto.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#c4d6ef]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#5B7493]">
               Ligue-nos, envie um email ou deixe-nos uma mensagem. Atendemos particulares e empresas em
               Lisboa, com assistência técnica em todo o país.
             </p>
@@ -68,7 +71,7 @@ export default function Contacto() {
                       : '')
                   }
                 >
-                  <span className="inline-grid h-11 w-11 place-items-center rounded-lg bg-[#0A2E5C] text-[#5BC8E8]">
+                  <span className="inline-grid h-11 w-11 place-items-center rounded-lg bg-[#0A2E5C] text-[#FF9A3C]">
                     <c.icon className="h-5 w-5" />
                   </span>
                   <div>
@@ -99,12 +102,12 @@ export default function Contacto() {
                 Descreva o que precisa e entraremos em contacto consigo.
               </p>
               {sent ? (
-                <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-br from-[#0A2E5C] to-[#103a73] p-10 text-center text-[#EAF1FB]">
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#5BC8E8] text-[#0A2E5C]">
+                <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl border border-[#FF7F00]/20 bg-white p-10 text-center text-[#0A2E5C]">
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#FF7F00] text-white">
                     <Check className="h-7 w-7" strokeWidth={3} />
                   </span>
                   <p className="font-archivo text-xl font-bold">Mensagem enviada!</p>
-                  <p className="text-sm text-[#9fbce6]">
+                  <p className="text-sm text-[#5B7493]">
                     Obrigado pelo seu contacto. A equipa Nipolândia responderá com a maior brevidade.
                   </p>
                 </div>

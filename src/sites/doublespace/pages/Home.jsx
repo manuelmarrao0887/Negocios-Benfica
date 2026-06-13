@@ -13,33 +13,33 @@ export default function Home() {
 
   return (
     <>
-      {/* ── Hero (dark, editorial) ───────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#1B1714] pt-32 pb-20 sm:pt-40 sm:pb-28">
-        {/* warm glows */}
+      {/* ── Hero (light, editorial) ──────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#F6F1EC] pt-32 pb-20 sm:pt-40 sm:pb-28">
+        {/* soft warm glows on light */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-32 -top-24 h-[34rem] w-[34rem] rounded-full bg-[#C06A52]/25 blur-3xl" />
-          <div className="absolute -left-40 bottom-[-6rem] h-[30rem] w-[30rem] rounded-full bg-[#A98DA0]/20 blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(246,241,236,0.06),transparent_55%)]" />
+          <div className="absolute -right-32 -top-24 h-[34rem] w-[34rem] rounded-full bg-[#C06A52]/15 blur-3xl" />
+          <div className="absolute -left-40 bottom-[-6rem] h-[30rem] w-[30rem] rounded-full bg-[#A98DA0]/15 blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.6),transparent_55%)]" />
         </div>
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#F6F1EC] backdrop-blur-sm">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#1B1714]/10 bg-[#FFFFFF] px-4 py-1.5 font-sans text-xs font-bold uppercase tracking-[0.18em] text-[#1B1714] shadow-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#C06A52]" /> Benfica · Lisboa
               </span>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="mt-6 font-bricolage text-5xl font-bold leading-[1.02] tracking-tight text-[#F6F1EC] text-balance sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 font-bricolage text-5xl font-bold leading-[1.02] tracking-tight text-[#1B1714] text-balance sm:text-6xl lg:text-7xl">
                 O teu espaço de{' '}
-                <span className="bg-gradient-to-r from-[#C06A52] via-[#cf8068] to-[#A98DA0] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#C06A52] via-[#b5604a] to-[#9a7d90] bg-clip-text text-transparent">
                   beleza
                 </span>{' '}
                 em Benfica.
               </h1>
             </Reveal>
             <Reveal delay={150}>
-              <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-[#F6F1EC]/75">
+              <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-[#46413c]">
                 Nails · Cosmetology · Barber. Três mundos num só salão — unhas, estética e barbearia
                 — com uma equipa que fala a tua língua.
               </p>
@@ -56,14 +56,14 @@ export default function Home() {
                   href={brand.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 font-sans text-base font-bold text-[#F6F1EC] transition-colors duration-200 hover:bg-white/10 cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#1B1714]/20 bg-[#FFFFFF] px-7 py-3.5 font-sans text-base font-bold text-[#1B1714] transition-colors duration-200 hover:border-[#C06A52] hover:text-[#C06A52] cursor-pointer"
                 >
                   <Instagram className="h-5 w-5" /> {brand.instagramHandle}
                 </a>
               </div>
             </Reveal>
             <Reveal delay={300}>
-              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[#F6F1EC]/70">
+              <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-[#46413c]">
                 <span className="inline-flex items-center gap-2">
                   <Instagram className="h-4 w-4 text-[#C06A52]" /> {brand.followers} seguidores
                 </span>
@@ -77,7 +77,7 @@ export default function Home() {
             </Reveal>
           </div>
 
-          {/* Hero collage — three vertical tags over a feed-style tile */}
+          {/* Hero collage — feed-style tiles with a floating follower card */}
           <Reveal delay={260} className="relative">
             <div className="relative mx-auto max-w-md">
               <div className="grid grid-cols-2 gap-3">
@@ -85,7 +85,7 @@ export default function Home() {
                   <div
                     key={g.n}
                     className={
-                      'relative overflow-hidden rounded-2xl ' +
+                      'relative overflow-hidden rounded-2xl ring-1 ring-[#1B1714]/5 ' +
                       (i === 0 ? 'col-span-2 aspect-[16/10]' : 'aspect-square')
                     }
                   >
@@ -97,17 +97,17 @@ export default function Home() {
                       loading="lazy"
                       className="h-full w-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1B1714]/45 via-transparent to-[#C06A52]/10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1B1714]/25 via-transparent to-[#C06A52]/10" />
                   </div>
                 ))}
               </div>
-              <div className="absolute -bottom-5 -left-5 flex items-center gap-3 rounded-2xl border border-white/10 bg-[#1B1714]/90 px-5 py-3 shadow-2xl backdrop-blur">
+              <div className="absolute -bottom-5 -left-5 flex items-center gap-3 rounded-2xl border border-[#1B1714]/10 bg-[#FFFFFF] px-5 py-3 shadow-2xl">
                 <span className="grid h-9 w-9 place-items-center rounded-full bg-[#C06A52] text-[#F6F1EC]">
                   <Instagram className="h-4 w-4" />
                 </span>
                 <div className="leading-tight">
-                  <p className="font-bricolage text-lg font-bold text-[#F6F1EC]">{brand.followers}</p>
-                  <p className="text-[11px] font-semibold uppercase tracking-wide text-[#F6F1EC]/55">
+                  <p className="font-bricolage text-lg font-bold text-[#1B1714]">{brand.followers}</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-[#8a7f76]">
                     seguidores
                   </p>
                 </div>
@@ -249,19 +249,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Stats band ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#1B1714] py-16">
+      {/* ── Stats band (light, warm) ─────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#EFE7DE] py-16">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 top-0 h-64 w-64 rounded-full bg-[#C06A52]/20 blur-3xl" />
-          <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-[#A98DA0]/20 blur-3xl" />
+          <div className="absolute -left-20 top-0 h-64 w-64 rounded-full bg-[#C06A52]/12 blur-3xl" />
+          <div className="absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-[#A98DA0]/12 blur-3xl" />
         </div>
         <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 70} className="text-center">
-              <div className="font-bricolage text-4xl font-bold text-[#F6F1EC] sm:text-5xl">
+              <div className="font-bricolage text-4xl font-bold text-[#1B1714] sm:text-5xl">
                 {s.value}
               </div>
-              <div className="mt-2 text-xs font-semibold uppercase tracking-wide text-[#F6F1EC]/55">
+              <div className="mt-2 text-xs font-semibold uppercase tracking-wide text-[#8a7f76]">
                 {s.label}
               </div>
             </Reveal>

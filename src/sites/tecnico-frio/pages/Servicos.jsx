@@ -36,7 +36,7 @@ export default function Servicos() {
                   key={t.label}
                   className="inline-flex items-center gap-2 rounded-full border border-[#0B2536]/10 bg-white px-4 py-2 text-sm font-semibold text-[#0B2536]"
                 >
-                  <t.icon className="h-4 w-4 text-[#0E7FC1]" strokeWidth={1.8} /> {t.label}
+                  <t.icon className="h-4 w-4 text-[#0B6CC0]" strokeWidth={1.8} /> {t.label}
                 </span>
               ))}
             </div>
@@ -54,7 +54,7 @@ export default function Servicos() {
                   {/* Header side */}
                   <div className="relative overflow-hidden bg-gradient-to-br from-[#0B2536] to-[#103a52] p-8 sm:p-10">
                     <div className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-[#16B5C9]/20 blur-2xl" />
-                    <span className="relative inline-grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white shadow-lg">
+                    <span className="relative inline-grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] text-white shadow-lg">
                       <s.icon className="h-7 w-7" strokeWidth={1.6} />
                     </span>
                     <p className="relative mt-6 font-sans text-xs font-bold uppercase tracking-wide text-[#16B5C9]">
@@ -74,13 +74,13 @@ export default function Servicos() {
 
                   {/* Problems → solution side */}
                   <div className="p-8 sm:p-10">
-                    <p className="font-sans text-sm font-bold uppercase tracking-wide text-[#0E7FC1]">
+                    <p className="font-sans text-sm font-bold uppercase tracking-wide text-[#0B6CC0]">
                       {s.id === 'manutencao' ? 'O que inclui' : 'Sintomas que resolvemos'}
                     </p>
                     <ul className="mt-5 grid gap-x-6 gap-y-3.5 sm:grid-cols-2">
                       {s.problems.map((p) => (
                         <li key={p} className="flex items-start gap-3">
-                          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#16B5C9]/15 text-[#0E7FC1]">
+                          <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#16B5C9]/15 text-[#0B6CC0]">
                             <Check className="h-3 w-3" strokeWidth={3.5} />
                           </span>
                           <span className="text-[15px] leading-snug text-[#0B2536]">{p}</span>
@@ -99,7 +99,7 @@ export default function Servicos() {
       <section className="bg-[#F1F8FC] py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] px-8 py-12 sm:px-14 sm:py-16">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] px-8 py-12 sm:px-14 sm:py-16">
               <Wrench className="pointer-events-none absolute -right-8 -top-8 h-56 w-56 text-white/10" strokeWidth={0.8} aria-hidden="true" />
               <div className="relative flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
                 <div className="max-w-2xl">
@@ -117,7 +117,7 @@ export default function Servicos() {
                 <div className="flex shrink-0 flex-col gap-3">
                   <a
                     href={brand.phoneHref}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-sans text-base font-bold text-[#0E7FC1] transition-transform duration-200 hover:scale-[1.02] cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-sans text-base font-bold text-[#0B6CC0] transition-transform duration-200 hover:scale-[1.02] cursor-pointer"
                   >
                     <Phone className="h-5 w-5" /> {brand.phoneDisplay}
                   </a>
@@ -151,7 +151,7 @@ export default function Servicos() {
           <Reveal delay={120}>
             <Link
               to={siteLink(slug, 'contacto')}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0E7FC1] to-[#16B5C9] px-8 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#0E7FC1]/25 transition-all hover:brightness-105 cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0B6CC0] to-[#16B5C9] px-8 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#0B6CC0]/25 transition-all hover:brightness-105 cursor-pointer"
             >
               {brand.cta} <ArrowRight className="h-4 w-4" />
             </Link>

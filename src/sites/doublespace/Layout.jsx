@@ -5,7 +5,8 @@ import { siteLink, cn } from '../../shared/utils'
 import { useScrolled } from '../../shared/hooks'
 import { slug, brand, nav } from './data.jsx'
 
-// Wordmark — bilingual editorial mark. "Double" in terracotta, "Space" in dark/light.
+// Wordmark — real DoubleSpace logo (downloaded from double-space.eu).
+// Black mark on light surfaces; warm-white mark on dark surfaces.
 function Wordmark({ onLight }) {
   return (
     <NavLink
@@ -13,22 +14,20 @@ function Wordmark({ onLight }) {
       className="group flex items-center gap-3 cursor-pointer"
       aria-label="DoubleSpace — página inicial"
     >
+      <img
+        src={onLight ? '/logos/doublespace.png' : '/logos/doublespace-light.png'}
+        alt="DoubleSpace"
+        width="400"
+        height="120"
+        className="h-7 w-auto sm:h-8"
+      />
       <span
-        aria-hidden="true"
-        className="relative grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#C06A52] font-bricolage text-base font-bold text-[#F6F1EC] shadow-sm"
+        className={cn(
+          'hidden font-sans text-[9px] font-semibold uppercase tracking-[0.22em] sm:block',
+          onLight ? 'text-[#6B625B]' : 'text-[#F6F1EC]/70',
+        )}
       >
-        D
-        <span className="absolute -right-1 -bottom-1 grid h-4 w-4 place-items-center rounded-full bg-[#A98DA0] font-bricolage text-[9px] font-bold text-[#1B1714] ring-2 ring-[#F6F1EC]">
-          S
-        </span>
-      </span>
-      <span className="leading-none">
-        <span className={cn('block font-bricolage text-lg font-bold tracking-tight', onLight ? 'text-[#1B1714]' : 'text-[#F6F1EC]')}>
-          Double<span className="text-[#C06A52]">Space</span>
-        </span>
-        <span className={cn('mt-0.5 block font-sans text-[9px] font-semibold uppercase tracking-[0.22em]', onLight ? 'text-[#6B625B]' : 'text-[#F6F1EC]/70')}>
-          Nails · Cosmetology · Barber
-        </span>
+        Nails · Cosmetology · Barber
       </span>
     </NavLink>
   )
@@ -37,9 +36,9 @@ function Wordmark({ onLight }) {
 export default function Layout() {
   const scrolled = useScrolled(40)
   const [open, setOpen] = useState(false)
-  // Over the dark hero we use light nav text; once scrolled the bar turns to warm
-  // white so we switch to dark text. The mobile sheet is always on warm white.
-  const onLight = scrolled
+  // The site is now predominantly light — heros are warm-white too — so the header
+  // always sits on a light surface: dark nav text + the black logo throughout.
+  const onLight = true
 
   const linkClass = ({ isActive }) =>
     cn(
@@ -149,29 +148,22 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      {/* ── Footer ──────────────────────────────────────────────────── */}
-      <footer className="bg-[#1B1714] text-[#F6F1EC]/70">
+      {/* ── Footer (light) ──────────────────────────────────────────── */}
+      <footer className="border-t border-[#1B1714]/10 bg-[#EFE7DE] text-[#6B625B]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="relative grid h-9 w-9 place-items-center rounded-full bg-[#C06A52] font-bricolage text-base font-bold text-[#F6F1EC]"
-              >
-                D
-                <span className="absolute -right-1 -bottom-1 grid h-4 w-4 place-items-center rounded-full bg-[#A98DA0] font-bricolage text-[9px] font-bold text-[#1B1714] ring-2 ring-[#1B1714]">
-                  S
-                </span>
-              </span>
-              <span className="font-bricolage text-lg font-bold text-[#F6F1EC]">
-                Double<span className="text-[#C06A52]">Space</span>
-              </span>
-            </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#F6F1EC]/60">{brand.tagline}</p>
+            <img
+              src="/logos/doublespace.png"
+              alt="DoubleSpace"
+              width="400"
+              height="120"
+              className="h-8 w-auto"
+            />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#6B625B]">{brand.tagline}</p>
           </div>
 
           <div>
-            <h4 className="font-bricolage text-base font-bold text-[#F6F1EC]">Navegação</h4>
+            <h4 className="font-bricolage text-base font-bold text-[#1B1714]">Navegação</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {nav.map((n) => (
                 <li key={n.to}>
@@ -188,7 +180,7 @@ export default function Layout() {
           </div>
 
           <div>
-            <h4 className="font-bricolage text-base font-bold text-[#F6F1EC]">Contactos</h4>
+            <h4 className="font-bricolage text-base font-bold text-[#1B1714]">Contactos</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               <li>
                 <a href={brand.phoneHref} className="transition-colors hover:text-[#C06A52] cursor-pointer">
@@ -200,13 +192,13 @@ export default function Layout() {
                   WhatsApp
                 </a>
               </li>
-              <li className="text-[#F6F1EC]/55">{brand.address}</li>
+              <li className="text-[#8a7f76]">{brand.address}</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bricolage text-base font-bold text-[#F6F1EC]">Segue-nos</h4>
-            <p className="mt-4 text-sm text-[#F6F1EC]/55">{brand.hours}</p>
+            <h4 className="font-bricolage text-base font-bold text-[#1B1714]">Segue-nos</h4>
+            <p className="mt-4 text-sm text-[#8a7f76]">{brand.hours}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
                 href={brand.instagram}
@@ -217,16 +209,16 @@ export default function Layout() {
                 <Instagram className="h-4 w-4" /> Instagram
               </a>
             </div>
-            <p className="mt-3 text-xs text-[#F6F1EC]/40">
+            <p className="mt-3 text-xs text-[#8a7f76]">
               {brand.instagramHandle} · {brand.followers} seguidores
             </p>
           </div>
         </div>
-        <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-[#F6F1EC]/45 sm:flex-row">
+        <div className="border-t border-[#1B1714]/10">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-[#8a7f76] sm:flex-row">
             <p>© 2026 DoubleSpace — Nails · Cosmetology · Barber. Benfica, Lisboa.</p>
             <p>
-              Redesenhado por <span className="font-semibold text-[#F6F1EC]/80">ProofStudio</span>
+              Redesenhado por <span className="font-semibold text-[#1B1714]">ProofStudio</span>
             </p>
           </div>
         </div>

@@ -145,7 +145,7 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#5B6068]">
+              <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#9aa0a8]">
                 Navegação
               </h4>
               <ul className="mt-5 space-y-3 text-[15px]">
@@ -164,7 +164,7 @@ export default function Layout() {
             </div>
 
             <div>
-              <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#5B6068]">
+              <h4 className="font-syne text-xs font-bold uppercase tracking-[0.2em] text-[#9aa0a8]">
                 Estúdio
               </h4>
               <address className="mt-5 space-y-3 text-[15px] not-italic text-[#cfd2d6]">

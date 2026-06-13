@@ -104,7 +104,7 @@ export default function Home() {
                 Reinventamos técnicas e materiais tradicionais portugueses — sobretudo o{' '}
                 <span className="text-[#2B5BD7]">azulejo</span> industrial descontinuado — reunindo
                 soluções formais inesperadas e{' '}
-                <span className="text-[#E0B23B]">conscientes</span>.
+                <span className="text-[#2B5BD7]">conscientes</span>.
               </p>
             </Reveal>
           </div>
@@ -231,7 +231,7 @@ export default function Home() {
                 {press.map((p, i) => (
                   <span key={p} className="flex items-center gap-6">
                     <span className="text-[#15181D]">{p}</span>
-                    {i < press.length - 1 && <span className="text-[#E0B23B]" aria-hidden="true">/</span>}
+                    {i < press.length - 1 && <span className="text-[#2B5BD7]" aria-hidden="true">/</span>}
                   </span>
                 ))}
               </div>

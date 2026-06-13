@@ -31,7 +31,7 @@ export const META = [
     tagline: 'Especialistas exclusivos em reparação de televisores.',
     location: 'Calçada do Tojal 53B · Lisboa',
     year: '2025',
-    palette: { bg: '#0B1220', fg: '#E8EEF7', accent: '#2E7DF6', accent2: '#18C29C' },
+    palette: { bg: '#FFFFFF', fg: '#0F1B2D', accent: '#2E7DF6', accent2: '#0B8C73' },
     font: { display: 'space', body: 'sans' },
   },
   {
@@ -55,7 +55,7 @@ export const META = [
     tagline: 'Reparação de ar condicionado e frigoríficos na Grande Lisboa.',
     location: 'Calçada do Tojal 03 · Lisboa',
     year: '2025',
-    palette: { bg: '#F1F8FC', fg: '#0B2536', accent: '#0E7FC1', accent2: '#16B5C9' },
+    palette: { bg: '#F1F8FC', fg: '#0B2536', accent: '#0B6CC0', accent2: '#16B5C9' },
     font: { display: 'outfit', body: 'sans' },
   },
   {
@@ -67,7 +67,7 @@ export const META = [
     tagline: 'Climatização e ventilação com rigor desde 1977.',
     location: 'R. Jorge Barradas 49B · Benfica',
     year: '2025',
-    palette: { bg: '#0A2E5C', fg: '#EAF1FB', accent: '#2C7BE5', accent2: '#5BC8E8' },
+    palette: { bg: '#F2F6FC', fg: '#0A2E5C', accent: '#2C7BE5', accent2: '#FF7F00' },
     font: { display: 'archivo', body: 'sans' },
   },
   {
@@ -79,7 +79,7 @@ export const META = [
     tagline: 'Construção em Light Steel Framing — mais rápida, leve e sustentável.',
     location: 'R. Cmte. Henrique Maya 7C · Lisboa',
     year: '2025',
-    palette: { bg: '#14181D', fg: '#ECEFF2', accent: '#F2A33C', accent2: '#7C8B9C' },
+    palette: { bg: '#F7F8FA', fg: '#14181D', accent: '#F2A33C', accent2: '#64727F' },
     font: { display: 'sora', body: 'sans' },
   },
   {
@@ -91,7 +91,7 @@ export const META = [
     tagline: 'Engenharia de fornos refractários para a indústria, no mundo inteiro.',
     location: 'R. das Pedralvas 23A · Lisboa',
     year: '2025',
-    palette: { bg: '#17110D', fg: '#F3EAE2', accent: '#E5562A', accent2: '#E8A33D' },
+    palette: { bg: '#F7F5F1', fg: '#1B2540', accent: '#D11F2A', accent2: '#1F2D5E' },
     font: { display: 'oswald', body: 'sans' },
   },
   {
@@ -103,7 +103,7 @@ export const META = [
     tagline: 'Isolamentos, revestimentos e impermeabilização há 30 anos.',
     location: 'R. Jorge Barradas 37A · Lisboa',
     year: '2025',
-    palette: { bg: '#F4F6F8', fg: '#14202B', accent: '#1C6DD0', accent2: '#F0A93B' },
+    palette: { bg: '#F4F6F8', fg: '#14202B', accent: '#007A79', accent2: '#FAA734' },
     font: { display: 'manrope', body: 'sans' },
   },
   {
@@ -115,7 +115,7 @@ export const META = [
     tagline: 'Cuidamos da sua contabilidade. Fazemos crescer o seu negócio.',
     location: 'R. Lucília Simões 1A · Benfica',
     year: '2025',
-    palette: { bg: '#F4F8F6', fg: '#0E2A23', accent: '#1F9D6B', accent2: '#123C66' },
+    palette: { bg: '#F4F8F6', fg: '#16363B', accent: '#0B7C88', accent2: '#3AC2CF' },
     font: { display: 'jakarta', body: 'sans' },
   },
   {
@@ -127,7 +127,7 @@ export const META = [
     tagline: 'Máquinas de alta frequência e ultra-sons. Assistência à indústria.',
     location: 'R. Rogério Amaral 6A · Benfica',
     year: '2025',
-    palette: { bg: '#F4F6F9', fg: '#10161D', accent: '#1A56DB', accent2: '#2FA39B' },
+    palette: { bg: '#F4F6F9', fg: '#16182B', accent: '#2E3192', accent2: '#E0A126' },
     font: { display: 'plex', body: 'plex' },
   },
   {
@@ -151,7 +151,7 @@ export const META = [
     tagline: 'Extensões de cabelo 100% humano. Luxo e transformação em Lisboa.',
     location: 'R. Polo Norte 18D · Lisboa',
     year: '2025',
-    palette: { bg: '#15100F', fg: '#F3E7E4', accent: '#C98A6B', accent2: '#E6B9B0' },
+    palette: { bg: '#FBF4F7', fg: '#2A1620', accent: '#CC0C78', accent2: '#B08D3C' },
     font: { display: 'cormorant', body: 'jost' },
   },
   {
@@ -163,7 +163,7 @@ export const META = [
     tagline: 'Especialistas reconhecidos no mercado imobiliário de Benfica.',
     location: 'Av. Gomes Pereira 28B · Benfica',
     year: '2025',
-    palette: { bg: '#F6F3EC', fg: '#14233B', accent: '#B7892E', accent2: '#1E3A5F' },
+    palette: { bg: '#F6F3EC', fg: '#241019', accent: '#7A1B47', accent2: '#5A1235' },
     font: { display: 'playfair', body: 'sans' },
   },
 ]

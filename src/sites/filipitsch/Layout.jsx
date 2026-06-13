@@ -5,18 +5,14 @@ import { siteLink, cn } from '../../shared/utils'
 import { useScrolled } from '../../shared/hooks'
 import { slug, brand, nav } from './data.jsx'
 
-function Brandmark({ onLight }) {
+function Brandmark() {
   return (
-    <NavLink to={siteLink(slug)} className="group flex items-center gap-2.5 cursor-pointer">
-      <span className="grid h-9 w-9 place-items-center rounded-full bg-[#CBA35C] font-fraunces text-lg font-semibold text-[#0E3B34]">
-        F
-      </span>
-      <span className={cn('font-fraunces text-lg font-semibold leading-none', onLight ? 'text-[#0E3B34]' : 'text-[#F4F0E4]')}>
-        Filipitsch
-        <span className={cn('block font-nunito text-[10px] font-semibold uppercase tracking-[0.18em]', onLight ? 'text-[#7a8a82]' : 'text-[#7FB39B]')}>
-          Terapia Activa
-        </span>
-      </span>
+    <NavLink
+      to={siteLink(slug)}
+      aria-label="Filipitsch — Terapia Activa"
+      className="group inline-flex items-center rounded-xl bg-white px-3 py-1.5 shadow-sm ring-1 ring-[#0E3B34]/10 transition-shadow duration-200 hover:shadow-md cursor-pointer"
+    >
+      <img src="/logos/filipitsch.jpg" alt="Filipitsch logótipo" className="h-9 w-auto" />
     </NavLink>
   )
 }
@@ -41,7 +37,7 @@ export default function Layout() {
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-          <Brandmark onLight />
+          <Brandmark />
 
           <nav className="hidden items-center gap-9 md:flex">
             {nav.map((n) => (
@@ -108,12 +104,9 @@ export default function Layout() {
       <footer className="bg-[#0E3B34] text-[#cfe0d8]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-[#CBA35C] font-fraunces text-lg font-semibold text-[#0E3B34]">
-                F
-              </span>
-              <span className="font-fraunces text-lg font-semibold text-[#F4F0E4]">Filipitsch</span>
-            </div>
+            <span className="inline-flex items-center rounded-xl bg-white px-3.5 py-2 shadow-sm ring-1 ring-white/15">
+              <img src="/logos/filipitsch.jpg" alt="Filipitsch logótipo" className="h-10 w-auto" />
+            </span>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#9fb8ac]">{brand.tagline}</p>
           </div>
 

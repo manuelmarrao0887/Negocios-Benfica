@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { Menu, X, Phone, Snowflake, MessageCircle, Mail, MapPin } from 'lucide-react'
+import { Menu, X, Phone, MessageCircle, Mail, MapPin } from 'lucide-react'
 import { siteLink, cn } from '../../shared/utils'
 import { useScrolled } from '../../shared/hooks'
 import { slug, brand, nav } from './data.jsx'
@@ -8,12 +8,12 @@ import { slug, brand, nav } from './data.jsx'
 function Brandmark() {
   return (
     <NavLink to={siteLink(slug)} className="group flex items-center gap-2.5 cursor-pointer" aria-label="Técnico Frio — página inicial">
-      <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white shadow-md shadow-[#0E7FC1]/25 transition-transform duration-300 group-hover:scale-105">
-        <Snowflake className="h-5 w-5" strokeWidth={2.2} />
+      <span className="grid h-12 w-12 place-items-center rounded-xl bg-white shadow-md shadow-[#0B6CC0]/15 ring-1 ring-[#0B2536]/5 transition-transform duration-300 group-hover:scale-105">
+        <img src="/logos/tecnico-frio.png" alt="Técnico Frio logótipo" className="h-10 w-auto" />
       </span>
       <span className="font-outfit text-lg font-bold leading-none text-[#0B2536]">
         Técnico Frio
-        <span className="mt-0.5 block font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0E7FC1]">
+        <span className="mt-0.5 block font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0B6CC0]">
           Frio & Ar Condicionado
         </span>
       </span>
@@ -28,7 +28,7 @@ export default function Layout() {
   const linkClass = ({ isActive }) =>
     cn(
       'relative font-sans text-sm font-semibold transition-colors duration-200 cursor-pointer',
-      isActive ? 'text-[#0E7FC1]' : 'text-[#0B2536] hover:text-[#0E7FC1]',
+      isActive ? 'text-[#0B6CC0]' : 'text-[#0B2536] hover:text-[#0B6CC0]',
     )
 
   return (
@@ -64,7 +64,7 @@ export default function Layout() {
           <div className="hidden md:block">
             <a
               href={brand.phoneHref}
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0E7FC1] to-[#16B5C9] px-5 py-2.5 font-sans text-sm font-bold text-white shadow-lg shadow-[#0E7FC1]/25 transition-all duration-200 hover:shadow-xl hover:brightness-105 cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0B6CC0] to-[#16B5C9] px-5 py-2.5 font-sans text-sm font-bold text-white shadow-lg shadow-[#0B6CC0]/25 transition-all duration-200 hover:shadow-xl hover:brightness-105 cursor-pointer"
             >
               <Phone className="h-4 w-4" /> {brand.phoneDisplay}
             </a>
@@ -72,7 +72,7 @@ export default function Layout() {
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className="rounded-lg p-1 text-[#0B2536] transition-colors hover:text-[#0E7FC1] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7FC1] md:hidden cursor-pointer"
+            className="rounded-lg p-1 text-[#0B2536] transition-colors hover:text-[#0B6CC0] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0B6CC0] md:hidden cursor-pointer"
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
           >
@@ -93,7 +93,7 @@ export default function Layout() {
                   className={({ isActive }) =>
                     cn(
                       'rounded-xl px-4 py-3 font-sans text-base font-semibold transition-colors cursor-pointer',
-                      isActive ? 'bg-[#0E7FC1]/10 text-[#0E7FC1]' : 'text-[#0B2536] hover:bg-[#0B2536]/5',
+                      isActive ? 'bg-[#0B6CC0]/10 text-[#0B6CC0]' : 'text-[#0B2536] hover:bg-[#0B2536]/5',
                     )
                   }
                 >
@@ -102,7 +102,7 @@ export default function Layout() {
               ))}
               <a
                 href={brand.phoneHref}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0E7FC1] to-[#16B5C9] px-4 py-3 font-sans text-base font-bold text-white cursor-pointer"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#0B6CC0] to-[#16B5C9] px-4 py-3 font-sans text-base font-bold text-white cursor-pointer"
               >
                 <Phone className="h-4 w-4" /> {brand.phoneDisplay}
               </a>
@@ -120,8 +120,8 @@ export default function Layout() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white">
-                <Snowflake className="h-5 w-5" strokeWidth={2.2} />
+              <span className="grid h-12 w-12 place-items-center rounded-xl bg-white shadow-sm">
+                <img src="/logos/tecnico-frio.png" alt="Técnico Frio logótipo" className="h-10 w-auto" />
               </span>
               <span className="font-outfit text-lg font-bold text-white">Técnico Frio</span>
             </div>

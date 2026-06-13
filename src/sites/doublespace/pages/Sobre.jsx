@@ -13,21 +13,21 @@ export default function Sobre() {
 
   return (
     <>
-      {/* Page hero */}
-      <section className="relative overflow-hidden bg-[#1B1714] px-6 pt-36 pb-20">
+      {/* Page hero (light) */}
+      <section className="relative overflow-hidden bg-[#F6F1EC] px-6 pt-36 pb-20">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-28 -top-20 h-[28rem] w-[28rem] rounded-full bg-[#A98DA0]/20 blur-3xl" />
-          <div className="absolute -left-32 bottom-[-4rem] h-72 w-72 rounded-full bg-[#C06A52]/20 blur-3xl" />
+          <div className="absolute -right-28 -top-20 h-[28rem] w-[28rem] rounded-full bg-[#A98DA0]/15 blur-3xl" />
+          <div className="absolute -left-32 bottom-[-4rem] h-72 w-72 rounded-full bg-[#C06A52]/12 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
             <span className="font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#C06A52]">
               O conceito
             </span>
-            <h1 className="mt-3 max-w-3xl font-bricolage text-5xl font-bold leading-[1.03] text-[#F6F1EC] sm:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-bricolage text-5xl font-bold leading-[1.03] text-[#1B1714] sm:text-6xl">
               Três espaços de beleza, debaixo do mesmo teto.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#F6F1EC]/75">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#46413c]">
               Em Benfica, a DoubleSpace nasceu de uma ideia simples: reunir Nails, Cosmetology e
               Barber num só lugar, para que a tua rotina de beleza seja fácil, próxima e cuidada.
             </p>

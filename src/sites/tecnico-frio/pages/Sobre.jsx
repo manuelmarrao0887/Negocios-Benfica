@@ -15,7 +15,7 @@ export default function Sobre() {
     <>
       {/* Page hero */}
       <section className="relative overflow-hidden bg-[#F1F8FC] px-6 pt-36 pb-16">
-        <div className="pointer-events-none absolute -right-40 -top-24 h-[30rem] w-[30rem] rounded-full bg-[#0E7FC1]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-40 -top-24 h-[30rem] w-[30rem] rounded-full bg-[#0B6CC0]/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
             <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#16B5C9]">
@@ -54,7 +54,7 @@ export default function Sobre() {
                   <p className="mt-1.5 text-sm text-[#a7bccb]">Assistência ao domicílio em toda a Grande Lisboa.</p>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] px-6 py-5 text-white shadow-xl sm:block">
+              <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] px-6 py-5 text-white shadow-xl sm:block">
                 <span className="font-outfit text-3xl font-bold">4 eixos</span>
                 <p className="text-xs font-bold uppercase tracking-wide text-white/90">de cobertura</p>
               </div>
@@ -79,7 +79,7 @@ export default function Sobre() {
               {promise.map((p, i) => (
                 <Reveal key={p.title} delay={i * 90}>
                   <div className="flex items-start gap-4 rounded-2xl border border-[#0B2536]/10 bg-[#F1F8FC] p-5">
-                    <span className="inline-grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white">
+                    <span className="inline-grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] text-white">
                       <p.icon className="h-5 w-5" strokeWidth={1.8} />
                     </span>
                     <div>
@@ -109,7 +109,7 @@ export default function Sobre() {
             {trust.map((t, i) => (
               <Reveal key={t.title} delay={i * 90}>
                 <div className="h-full rounded-2xl bg-white p-8 ring-1 ring-[#0B2536]/5">
-                  <span className="inline-grid h-12 w-12 place-items-center rounded-full bg-[#0E7FC1]/10 text-[#0E7FC1]">
+                  <span className="inline-grid h-12 w-12 place-items-center rounded-full bg-[#0B6CC0]/10 text-[#0B6CC0]">
                     <t.icon className="h-6 w-6" strokeWidth={1.7} />
                   </span>
                   <h3 className="mt-5 font-outfit text-lg font-semibold text-[#0B2536]">{t.title}</h3>
@@ -138,7 +138,7 @@ export default function Sobre() {
               </p>
               <Link
                 to={siteLink(slug, 'contacto')}
-                className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#0B2536]/15 px-6 py-3 font-sans text-sm font-bold text-[#0B2536] transition-colors hover:border-[#0E7FC1]/40 hover:text-[#0E7FC1] cursor-pointer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#0B2536]/15 px-6 py-3 font-sans text-sm font-bold text-[#0B2536] transition-colors hover:border-[#0B6CC0]/40 hover:text-[#0B6CC0] cursor-pointer"
               >
                 Verificar a minha zona <ArrowRight className="h-4 w-4" />
               </Link>
@@ -148,7 +148,7 @@ export default function Sobre() {
                 {areas.map((a) => (
                   <div key={a.title} className="rounded-2xl border border-[#0B2536]/10 bg-[#F1F8FC] p-6">
                     <div className="flex items-center gap-2.5">
-                      <span className="inline-grid h-9 w-9 place-items-center rounded-lg bg-white text-[#0E7FC1] shadow-sm">
+                      <span className="inline-grid h-9 w-9 place-items-center rounded-lg bg-white text-[#0B6CC0] shadow-sm">
                         <a.icon className="h-4.5 w-4.5" strokeWidth={1.8} />
                       </span>
                       <h3 className="font-outfit text-base font-semibold text-[#0B2536]">{a.title}</h3>
@@ -187,13 +187,13 @@ export default function Sobre() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
                 href={brand.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0E7FC1] to-[#16B5C9] px-8 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#0E7FC1]/25 transition-all hover:brightness-105 cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0B6CC0] to-[#16B5C9] px-8 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#0B6CC0]/25 transition-all hover:brightness-105 cursor-pointer"
               >
                 <Phone className="h-5 w-5" /> {brand.phoneDisplay}
               </a>
               <Link
                 to={siteLink(slug, 'contacto')}
-                className="inline-flex items-center gap-2 rounded-full border border-[#0B2536]/15 bg-white px-8 py-4 font-sans text-base font-bold text-[#0B2536] transition-colors hover:border-[#0E7FC1]/40 hover:text-[#0E7FC1] cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full border border-[#0B2536]/15 bg-white px-8 py-4 font-sans text-base font-bold text-[#0B2536] transition-colors hover:border-[#0B6CC0]/40 hover:text-[#0B6CC0] cursor-pointer"
               >
                 {brand.cta} <ArrowRight className="h-4 w-4" />
               </Link>

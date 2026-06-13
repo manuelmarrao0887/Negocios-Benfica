@@ -1,33 +1,23 @@
 import { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { Menu, X, Phone, Wind, MapPin, Mail, Clock } from 'lucide-react'
+import { Menu, X, Phone, MapPin, Mail, Clock } from 'lucide-react'
 import { siteLink, cn } from '../../shared/utils'
 import { useScrolled } from '../../shared/hooks'
 import { slug, brand, nav, badges } from './data.jsx'
 
-function Brandmark({ solid }) {
+function Brandmark() {
+  // Real Nipolândia logo (dark wordmark + orange brandmark on white). Placed on a
+  // white chip so it reads on both the light header and the deep-blue hero.
   return (
     <NavLink to={siteLink(slug)} className="group flex items-center gap-2.5 cursor-pointer">
-      <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-[#2C7BE5] to-[#5BC8E8] text-white shadow-sm shadow-[#0A2E5C]/20">
-        <Wind className="h-5 w-5" strokeWidth={2.2} />
-      </span>
-      <span className="leading-none">
-        <span
-          className={cn(
-            'block font-archivo text-lg font-bold tracking-tight transition-colors duration-300',
-            solid ? 'text-[#0A2E5C]' : 'text-[#EAF1FB]',
-          )}
-        >
-          Nipolândia
-        </span>
-        <span
-          className={cn(
-            'mt-0.5 block font-sans text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300',
-            solid ? 'text-[#5B7493]' : 'text-[#5BC8E8]',
-          )}
-        >
-          Climatização · Ventilação
-        </span>
+      <span className="inline-flex rounded-lg bg-white px-2.5 py-1.5 shadow-sm ring-1 ring-[#0A2E5C]/10">
+        <img
+          src="/logos/nipolandia.jpg"
+          alt="Nipolândia logótipo"
+          width="390"
+          height="78"
+          className="h-7 w-auto sm:h-8"
+        />
       </span>
     </NavLink>
   )
@@ -40,26 +30,22 @@ export default function Layout() {
   const linkClass = ({ isActive }) =>
     cn(
       'relative font-sans text-sm font-semibold transition-colors duration-200 cursor-pointer',
-      isActive
-        ? 'text-[#2C7BE5]'
-        : scrolled
-          ? 'text-[#5B7493] hover:text-[#0A2E5C]'
-          : 'text-[#EAF1FB]/85 hover:text-white',
+      isActive ? 'text-[#2C7BE5]' : 'text-[#5B7493] hover:text-[#0A2E5C]',
     )
 
   return (
     <div className="min-h-screen bg-[#F2F6FC] font-sans text-[#0A2E5C]">
-      {/* Header */}
+      {/* Header — light surface in both states; dark-on-light nav for AA contrast */}
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-all duration-300',
+          'fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-all duration-300',
           scrolled
-            ? 'border-b border-[#0A2E5C]/10 bg-[#F2F6FC]/90 py-3 shadow-sm backdrop-blur-md'
-            : 'py-5',
+            ? 'border-[#0A2E5C]/10 bg-[#F2F6FC]/95 py-3 shadow-sm'
+            : 'border-transparent bg-[#F2F6FC]/80 py-4',
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-          <Brandmark solid={scrolled} />
+          <Brandmark />
 
           <nav className="hidden items-center gap-9 md:flex">
             {nav.map((n) => (
@@ -72,12 +58,7 @@ export default function Layout() {
           <div className="hidden md:block">
             <a
               href={brand.phoneHref}
-              className={cn(
-                'inline-flex items-center gap-2 rounded-lg px-5 py-2.5 font-sans text-sm font-bold transition-all duration-200 cursor-pointer',
-                scrolled
-                  ? 'bg-[#2C7BE5] text-white hover:bg-[#1f63c4]'
-                  : 'bg-white/10 text-white ring-1 ring-white/25 backdrop-blur-sm hover:bg-white/20',
-              )}
+              className="inline-flex items-center gap-2 rounded-lg bg-[#2C7BE5] px-5 py-2.5 font-sans text-sm font-bold text-white transition-all duration-200 hover:bg-[#1f63c4] cursor-pointer"
             >
               <Phone className="h-4 w-4" /> {brand.phoneDisplay}
             </a>
@@ -85,7 +66,7 @@ export default function Layout() {
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className={cn('md:hidden cursor-pointer transition-colors', scrolled ? 'text-[#0A2E5C]' : 'text-[#EAF1FB]')}
+            className="text-[#0A2E5C] transition-colors md:hidden cursor-pointer"
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
           >
@@ -132,11 +113,14 @@ export default function Layout() {
       <footer className="bg-[#0A2E5C] text-[#c4d6ef]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-gradient-to-br from-[#2C7BE5] to-[#5BC8E8] text-white">
-                <Wind className="h-5 w-5" strokeWidth={2.2} />
-              </span>
-              <span className="font-archivo text-lg font-bold text-[#EAF1FB]">Nipolândia</span>
+            <div className="inline-flex rounded-lg bg-white px-3 py-2 shadow-sm">
+              <img
+                src="/logos/nipolandia.jpg"
+                alt="Nipolândia logótipo"
+                width="390"
+                height="78"
+                className="h-8 w-auto"
+              />
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#8aa6cf]">
               {brand.full} Parceiro de confiança em climatização e ventilação desde 1977.
@@ -161,7 +145,7 @@ export default function Layout() {
                   <NavLink
                     to={siteLink(slug, n.to)}
                     end={n.to === ''}
-                    className="transition-colors hover:text-[#5BC8E8] cursor-pointer"
+                    className="transition-colors hover:text-[#FF9A3C] cursor-pointer"
                   >
                     {n.label}
                   </NavLink>
@@ -174,17 +158,17 @@ export default function Layout() {
             <h4 className="font-archivo text-base font-bold text-[#EAF1FB]">Contactos</h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a href={brand.phoneHref} className="flex items-center gap-2 transition-colors hover:text-[#5BC8E8] cursor-pointer">
-                  <Phone className="h-4 w-4 text-[#5BC8E8]" /> {brand.phoneDisplay}
+                <a href={brand.phoneHref} className="flex items-center gap-2 transition-colors hover:text-[#FF9A3C] cursor-pointer">
+                  <Phone className="h-4 w-4 text-[#FF9A3C]" /> {brand.phoneDisplay}
                 </a>
               </li>
               <li>
-                <a href={brand.emailHref} className="flex items-center gap-2 transition-colors hover:text-[#5BC8E8] cursor-pointer">
-                  <Mail className="h-4 w-4 text-[#5BC8E8]" /> {brand.email}
+                <a href={brand.emailHref} className="flex items-center gap-2 transition-colors hover:text-[#FF9A3C] cursor-pointer">
+                  <Mail className="h-4 w-4 text-[#FF9A3C]" /> {brand.email}
                 </a>
               </li>
               <li className="flex items-start gap-2 text-[#8aa6cf]">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#5BC8E8]" /> {brand.address}
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF9A3C]" /> {brand.address}
               </li>
             </ul>
           </div>
@@ -193,10 +177,10 @@ export default function Layout() {
             <h4 className="font-archivo text-base font-bold text-[#EAF1FB]">Horário</h4>
             <ul className="mt-4 space-y-2 text-sm text-[#8aa6cf]">
               <li className="flex items-start gap-2">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#5BC8E8]" /> {brand.hours}
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#FF9A3C]" /> {brand.hours}
               </li>
               <li className="pl-6">{brand.hoursWeekend}</li>
-              <li className="pl-6 text-[#5BC8E8]">{brand.coverage}</li>
+              <li className="pl-6 text-[#FF9A3C]">{brand.coverage}</li>
             </ul>
           </div>
         </div>

@@ -30,13 +30,13 @@ export default function Contacto() {
     <>
       {/* Page hero */}
       <section className="relative overflow-hidden bg-[#F4F8F6] px-6 pt-36 pb-16">
-        <div className="pointer-events-none absolute -right-40 -top-24 h-[30rem] w-[30rem] rounded-full bg-[#1F9D6B]/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-40 -top-24 h-[30rem] w-[30rem] rounded-full bg-[#3AC2CF]/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#1F9D6B]">
+            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#0B7C88]">
               Contacto
             </span>
-            <h1 className="mt-3 max-w-3xl font-jakarta text-5xl font-extrabold leading-[1.05] text-[#0E2A23] sm:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-jakarta text-5xl font-extrabold leading-[1.05] text-[#16363B] sm:text-6xl">
               Falemos sobre o seu negócio.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#51635C]">
@@ -59,18 +59,18 @@ export default function Contacto() {
                     ? { href: c.href, ...(c.external ? { target: '_blank', rel: 'noreferrer' } : {}) }
                     : {})}
                   className={
-                    'flex h-full flex-col gap-3 rounded-2xl border border-[#0E2A23]/10 bg-[#F4F8F6] p-6 ' +
+                    'flex h-full flex-col gap-3 rounded-2xl border border-[#16363B]/10 bg-[#F4F8F6] p-6 ' +
                     (c.href
-                      ? 'transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1F9D6B]/40 hover:shadow-lg cursor-pointer'
+                      ? 'transition-all duration-200 hover:-translate-y-0.5 hover:border-[#0B7C88]/40 hover:shadow-lg cursor-pointer'
                       : '')
                   }
                 >
-                  <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#0E2A23] text-[#1F9D6B]">
+                  <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#16363B] text-[#3AC2CF]">
                     <c.icon className="h-5 w-5" />
                   </span>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-wide text-[#51635C]/70">{c.label}</p>
-                    <p className="mt-1 font-sans font-bold text-[#0E2A23]">{c.value}</p>
+                    <p className="mt-1 font-sans font-bold text-[#16363B]">{c.value}</p>
                   </div>
                 </Tag>
               </Reveal>
@@ -84,7 +84,7 @@ export default function Contacto() {
         <div className="mx-auto flex max-w-7xl flex-wrap gap-4 px-6">
           <a
             href={brand.phoneHref}
-            className="inline-flex items-center gap-2 rounded-full bg-[#1F9D6B] px-6 py-3 font-sans text-sm font-bold text-[#FFFFFF] transition-colors hover:bg-[#178a5c] cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0B7C88] px-6 py-3 font-sans text-sm font-bold text-[#FFFFFF] transition-colors hover:bg-[#0A6A74] cursor-pointer"
           >
             <Phone className="h-4 w-4" /> Ligar {brand.phoneDisplay}
           </a>
@@ -92,7 +92,7 @@ export default function Contacto() {
             href={brand.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-[#0E2A23]/15 px-6 py-3 font-sans text-sm font-bold text-[#0E2A23] transition-colors hover:border-[#1F9D6B]/40 hover:text-[#1F9D6B] cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border border-[#16363B]/15 px-6 py-3 font-sans text-sm font-bold text-[#16363B] transition-colors hover:border-[#0B7C88]/40 hover:text-[#0B7C88] cursor-pointer"
           >
             <MessageCircle className="h-4 w-4" /> WhatsApp {brand.mobileDisplay}
           </a>
@@ -104,14 +104,14 @@ export default function Contacto() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
           {/* Form */}
           <Reveal>
-            <div className="rounded-3xl border border-[#0E2A23]/10 bg-[#F4F8F6] p-8 sm:p-10">
-              <h2 className="font-jakarta text-2xl font-bold text-[#0E2A23]">Enviar mensagem</h2>
+            <div className="rounded-3xl border border-[#16363B]/10 bg-[#F4F8F6] p-8 sm:p-10">
+              <h2 className="font-jakarta text-2xl font-bold text-[#16363B]">Enviar mensagem</h2>
               <p className="mt-2 text-sm text-[#51635C]">
                 Conte-nos o que precisa e entraremos em contacto.
               </p>
               {sent ? (
-                <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-br from-[#0E2A23] to-[#123C66] p-10 text-center text-[#FFFFFF]">
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#1F9D6B] text-[#FFFFFF]">
+                <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-br from-[#16363B] to-[#0B7C88] p-10 text-center text-[#FFFFFF]">
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#0B7C88] text-[#FFFFFF]">
                     <Check className="h-7 w-7" strokeWidth={3} />
                   </span>
                   <p className="font-jakarta text-xl font-bold">Mensagem enviada!</p>
@@ -142,7 +142,7 @@ export default function Contacto() {
                     onChange={update}
                   />
                   <div>
-                    <label htmlFor="mensagem" className="mb-2 block font-sans text-sm font-bold text-[#0E2A23]">
+                    <label htmlFor="mensagem" className="mb-2 block font-sans text-sm font-bold text-[#16363B]">
                       Mensagem
                     </label>
                     <textarea
@@ -152,12 +152,12 @@ export default function Contacto() {
                       value={form.mensagem}
                       onChange={update}
                       placeholder="Em que podemos ajudar? (ex.: contabilidade da minha empresa, IRS, recibos verdes...)"
-                      className="w-full rounded-xl border border-[#0E2A23]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#0E2A23] outline-none transition-colors placeholder:text-[#9aa8a2] focus:border-[#1F9D6B] focus:ring-2 focus:ring-[#1F9D6B]/30"
+                      className="w-full rounded-xl border border-[#16363B]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#16363B] outline-none transition-colors placeholder:text-[#9aa8a2] focus:border-[#0B7C88] focus:ring-2 focus:ring-[#0B7C88]/30"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1F9D6B] px-7 py-3.5 font-sans text-base font-bold text-[#FFFFFF] transition-colors hover:bg-[#178a5c] cursor-pointer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0B7C88] px-7 py-3.5 font-sans text-base font-bold text-[#FFFFFF] transition-colors hover:bg-[#0A6A74] cursor-pointer"
                   >
                     <Mail className="h-4 w-4" /> Enviar mensagem
                   </button>
@@ -173,7 +173,7 @@ export default function Contacto() {
           {/* Map + hours */}
           <Reveal delay={120}>
             <div className="flex h-full flex-col gap-5">
-              <div className="overflow-hidden rounded-3xl border border-[#0E2A23]/10">
+              <div className="overflow-hidden rounded-3xl border border-[#16363B]/10">
                 <iframe
                   title="Mapa — Conta 100% Contabilidade, Benfica"
                   src={`https://www.google.com/maps?q=${encodeURIComponent(brand.mapsQuery)}&output=embed`}
@@ -182,8 +182,8 @@ export default function Contacto() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
-              <div className="flex items-center gap-4 rounded-2xl bg-[#0E2A23] p-6 text-[#FFFFFF]">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#1F9D6B] text-[#FFFFFF]">
+              <div className="flex items-center gap-4 rounded-2xl bg-[#16363B] p-6 text-[#FFFFFF]">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#0B7C88] text-[#FFFFFF]">
                   <Clock className="h-5 w-5" />
                 </span>
                 <div>
@@ -202,7 +202,7 @@ export default function Contacto() {
 function Field({ id, label, type = 'text', placeholder, value, onChange }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block font-sans text-sm font-bold text-[#0E2A23]">
+      <label htmlFor={id} className="mb-2 block font-sans text-sm font-bold text-[#16363B]">
         {label}
       </label>
       <input
@@ -212,7 +212,7 @@ function Field({ id, label, type = 'text', placeholder, value, onChange }) {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-[#0E2A23]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#0E2A23] outline-none transition-colors placeholder:text-[#9aa8a2] focus:border-[#1F9D6B] focus:ring-2 focus:ring-[#1F9D6B]/30"
+        className="w-full rounded-xl border border-[#16363B]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#16363B] outline-none transition-colors placeholder:text-[#9aa8a2] focus:border-[#0B7C88] focus:ring-2 focus:ring-[#0B7C88]/30"
       />
     </div>
   )

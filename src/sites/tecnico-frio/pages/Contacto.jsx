@@ -57,7 +57,7 @@ export default function Contacto() {
                     (c.href ? 'transition-all duration-200 hover:-translate-y-0.5 hover:border-[#16B5C9]/50 hover:shadow-lg cursor-pointer' : '')
                   }
                 >
-                  <span className="inline-grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white">
+                  <span className="inline-grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] text-white">
                     <c.icon className="h-5 w-5" />
                   </span>
                   <div>
@@ -80,8 +80,8 @@ export default function Contacto() {
               <h2 className="font-outfit text-2xl font-bold text-[#0B2536]">Deixe-nos uma mensagem</h2>
               <p className="mt-2 text-sm text-[#4A5E70]">Respondemos o mais rápido possível.</p>
               {sent ? (
-                <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] p-10 text-center text-white">
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-white text-[#0E7FC1]">
+                <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] p-10 text-center text-white">
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-white text-[#0B6CC0]">
                     <Check className="h-7 w-7" strokeWidth={3} />
                   </span>
                   <p className="font-outfit text-xl font-bold">Mensagem enviada!</p>
@@ -110,7 +110,7 @@ export default function Contacto() {
                     <select
                       id="servico"
                       defaultValue=""
-                      className="w-full rounded-xl border border-[#0B2536]/15 bg-white px-4 py-3 font-sans text-[#0B2536] outline-none transition-colors focus:border-[#0E7FC1] focus:ring-2 focus:ring-[#0E7FC1]/30 cursor-pointer"
+                      className="w-full rounded-xl border border-[#0B2536]/15 bg-white px-4 py-3 font-sans text-[#0B2536] outline-none transition-colors focus:border-[#0B6CC0] focus:ring-2 focus:ring-[#0B6CC0]/30 cursor-pointer"
                     >
                       <option value="" disabled>
                         Selecione o equipamento
@@ -131,12 +131,12 @@ export default function Contacto() {
                       required
                       rows={4}
                       placeholder="Descreva a avaria ou o que precisa..."
-                      className="w-full rounded-xl border border-[#0B2536]/15 bg-white px-4 py-3 font-sans text-[#0B2536] outline-none transition-colors placeholder:text-[#90a4b3] focus:border-[#0E7FC1] focus:ring-2 focus:ring-[#0E7FC1]/30"
+                      className="w-full rounded-xl border border-[#0B2536]/15 bg-white px-4 py-3 font-sans text-[#0B2536] outline-none transition-colors placeholder:text-[#90a4b3] focus:border-[#0B6CC0] focus:ring-2 focus:ring-[#0B6CC0]/30"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0E7FC1] to-[#16B5C9] px-7 py-3.5 font-sans text-base font-bold text-white shadow-lg shadow-[#0E7FC1]/25 transition-all hover:brightness-105 cursor-pointer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0B6CC0] to-[#16B5C9] px-7 py-3.5 font-sans text-base font-bold text-white shadow-lg shadow-[#0B6CC0]/25 transition-all hover:brightness-105 cursor-pointer"
                   >
                     <Send className="h-4 w-4" /> Enviar mensagem
                   </button>
@@ -171,7 +171,7 @@ export default function Contacto() {
                   href={brand.whatsapp}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#0B2536]/15 px-5 py-4 font-sans text-sm font-bold text-[#0B2536] transition-colors hover:border-[#16B5C9]/50 hover:text-[#0E7FC1] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#0B2536]/15 px-5 py-4 font-sans text-sm font-bold text-[#0B2536] transition-colors hover:border-[#16B5C9]/50 hover:text-[#0B6CC0] cursor-pointer"
                 >
                   <MessageCircle className="h-4 w-4 text-[#16B5C9]" /> WhatsApp
                 </a>
@@ -196,7 +196,7 @@ function Field({ id, label, type = 'text', placeholder, autoComplete }) {
         required
         autoComplete={autoComplete}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-[#0B2536]/15 bg-white px-4 py-3 font-sans text-[#0B2536] outline-none transition-colors placeholder:text-[#90a4b3] focus:border-[#0E7FC1] focus:ring-2 focus:ring-[#0E7FC1]/30"
+        className="w-full rounded-xl border border-[#0B2536]/15 bg-white px-4 py-3 font-sans text-[#0B2536] outline-none transition-colors placeholder:text-[#90a4b3] focus:border-[#0B6CC0] focus:ring-2 focus:ring-[#0B6CC0]/30"
       />
     </div>
   )

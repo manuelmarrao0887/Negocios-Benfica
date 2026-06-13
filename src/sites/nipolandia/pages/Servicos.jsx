@@ -13,28 +13,31 @@ export default function Servicos() {
 
   return (
     <>
-      {/* Page hero (deep-blue) */}
-      <section className="relative overflow-hidden bg-[#0A2E5C] px-6 pt-40 pb-20">
+      {/* Page hero (light) */}
+      <section className="relative overflow-hidden bg-[#F2F6FC] px-6 pt-40 pb-20">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-24 -top-32 h-[32rem] w-[32rem] rounded-full bg-[#2C7BE5]/25 blur-[110px]" />
+          <div className="absolute -right-24 -top-32 h-[32rem] w-[32rem] rounded-full bg-[#2C7BE5]/10 blur-[110px]" />
           <div
-            className="absolute inset-0 opacity-[0.06]"
+            className="absolute inset-0 opacity-[0.5]"
             style={{
               backgroundImage:
-                'linear-gradient(#EAF1FB 1px, transparent 1px), linear-gradient(90deg, #EAF1FB 1px, transparent 1px)',
+                'linear-gradient(#0A2E5C 1px, transparent 1px), linear-gradient(90deg, #0A2E5C 1px, transparent 1px)',
               backgroundSize: '56px 56px',
+              maskImage: 'radial-gradient(ellipse at top right, black, transparent 70%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at top right, black, transparent 70%)',
+              opacity: 0.05,
             }}
           />
         </div>
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#5BC8E8]">
+            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#C25E00]">
               Os nossos serviços
             </span>
-            <h1 className="mt-3 max-w-3xl font-archivo text-5xl font-extrabold leading-[1.04] tracking-tight text-[#EAF1FB] sm:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-archivo text-5xl font-extrabold leading-[1.04] tracking-tight text-[#0A2E5C] sm:text-6xl">
               Soluções completas de climatização e ventilação.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#c4d6ef]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#5B7493]">
               Do estudo técnico à instalação chave-na-mão e à manutenção preventiva. Respondemos a
               particulares e à indústria com o rigor que nos define desde 1977.
             </p>
@@ -49,7 +52,7 @@ export default function Servicos() {
             {services.map((s, i) => (
               <Reveal key={s.title} delay={(i % 3) * 70}>
                 <div className="group flex h-full flex-col rounded-xl border border-[#0A2E5C]/10 bg-[#F2F6FC] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#2C7BE5]/40 hover:bg-white hover:shadow-xl hover:shadow-[#0A2E5C]/5">
-                  <span className="inline-grid h-14 w-14 place-items-center rounded-xl bg-[#0A2E5C] text-[#5BC8E8]">
+                  <span className="inline-grid h-14 w-14 place-items-center rounded-xl bg-[#0A2E5C] text-[#FF9A3C]">
                     <s.icon className="h-7 w-7" strokeWidth={1.6} />
                   </span>
                   <h2 className="mt-6 font-archivo text-2xl font-bold text-[#0A2E5C]">{s.title}</h2>
@@ -93,7 +96,7 @@ export default function Servicos() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
-            <div className="grid items-stretch gap-0 overflow-hidden rounded-3xl border border-[#0A2E5C]/10 lg:grid-cols-2">
+            <div className="grid items-stretch gap-0 overflow-hidden rounded-3xl border border-[#0A2E5C]/10 bg-white lg:grid-cols-2">
               <div className="relative min-h-[280px] overflow-hidden bg-[#0A2E5C]">
                 <img
                   src="https://picsum.photos/seed/nipolandia-1/900/700"
@@ -103,23 +106,23 @@ export default function Servicos() {
                   loading="lazy"
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2E5C]/80 via-[#0A2E5C]/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2E5C]/60 via-transparent to-transparent" />
               </div>
-              <div className="flex flex-col justify-center bg-gradient-to-br from-[#0A2E5C] to-[#103a73] p-8 sm:p-12">
-                <span className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#5BC8E8]">
+              <div className="flex flex-col justify-center p-8 sm:p-12">
+                <span className="font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#C25E00]">
                   Indústria &amp; grandes projetos
                 </span>
-                <h2 className="mt-4 font-archivo text-3xl font-extrabold leading-tight text-[#EAF1FB] sm:text-4xl">
+                <h2 className="mt-4 font-archivo text-3xl font-extrabold leading-tight text-[#0A2E5C] sm:text-4xl">
                   Preparados para os projetos mais exigentes.
                 </h2>
-                <p className="mt-4 text-lg leading-relaxed text-[#9fbce6]">
+                <p className="mt-4 text-lg leading-relaxed text-[#5B7493]">
                   Desumidificação industrial, ventilação de processos e climatização de instalações
                   críticas — com projeto AVAC dedicado e assistência em todo o país.
                 </p>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {['Farmacêutica', 'Logística', 'Indústria', 'Retalho'].map((t) => (
-                    <li key={t} className="flex items-center gap-2.5 text-sm font-semibold text-[#EAF1FB]">
-                      <span className="grid h-5 w-5 place-items-center rounded bg-[#5BC8E8] text-[#0A2E5C]">
+                    <li key={t} className="flex items-center gap-2.5 text-sm font-semibold text-[#0A2E5C]">
+                      <span className="grid h-5 w-5 place-items-center rounded bg-[#FF7F00] text-white">
                         <Check className="h-3 w-3" strokeWidth={3} />
                       </span>
                       {t}
@@ -175,7 +178,7 @@ export default function Servicos() {
           <Reveal delay={120}>
             <Link
               to={siteLink(slug, 'contacto')}
-              className="inline-flex items-center gap-2 rounded-lg bg-[#0A2E5C] px-8 py-4 font-sans text-base font-bold text-[#EAF1FB] transition-colors hover:bg-[#08254a] cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#FF7F00] px-8 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#FF7F00]/25 transition-all hover:bg-[#e67200] cursor-pointer"
             >
               Pedir orçamento <ArrowRight className="h-4 w-4" />
             </Link>

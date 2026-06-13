@@ -13,21 +13,21 @@ export default function Servicos() {
 
   return (
     <>
-      {/* Page hero */}
-      <section className="relative overflow-hidden bg-[#1B1714] px-6 pt-36 pb-20">
+      {/* Page hero (light) */}
+      <section className="relative overflow-hidden bg-[#F6F1EC] px-6 pt-36 pb-20">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -right-28 -top-20 h-[28rem] w-[28rem] rounded-full bg-[#C06A52]/20 blur-3xl" />
-          <div className="absolute -left-32 bottom-[-4rem] h-72 w-72 rounded-full bg-[#A98DA0]/20 blur-3xl" />
+          <div className="absolute -right-28 -top-20 h-[28rem] w-[28rem] rounded-full bg-[#C06A52]/12 blur-3xl" />
+          <div className="absolute -left-32 bottom-[-4rem] h-72 w-72 rounded-full bg-[#A98DA0]/15 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
             <span className="font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#C06A52]">
               Os nossos serviços
             </span>
-            <h1 className="mt-3 max-w-3xl font-bricolage text-5xl font-bold leading-[1.03] text-[#F6F1EC] sm:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-bricolage text-5xl font-bold leading-[1.03] text-[#1B1714] sm:text-6xl">
               Tudo num só espaço, do detalhe ao acabamento.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#F6F1EC]/75">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#46413c]">
               Três verticais que se complementam — Nails, Cosmetology e Barber — mais styling, para
               cuidarmos de ti de uma ponta à outra. Preçário sob marcação.
             </p>
@@ -38,9 +38,9 @@ export default function Servicos() {
                 <a
                   key={s.key}
                   href={`#${s.key}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 font-sans text-sm font-semibold text-[#F6F1EC] transition-colors hover:bg-white/10 cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#1B1714]/15 bg-[#FFFFFF] px-4 py-2 font-sans text-sm font-semibold text-[#1B1714] transition-colors hover:border-[#C06A52] hover:text-[#C06A52] cursor-pointer"
                 >
-                  <s.icon className="h-4 w-4" style={{ color: s.accent === '#1B1714' ? '#F6F1EC' : s.accent }} />
+                  <s.icon className="h-4 w-4" style={{ color: s.accent === '#1B1714' ? '#1B1714' : s.accent }} />
                   {s.tag}
                 </a>
               ))}
@@ -122,49 +122,47 @@ export default function Servicos() {
       </section>
 
       {/* Pricing note + CTA */}
-      <section className="relative overflow-hidden bg-[#1B1714] py-20">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-16 top-0 h-64 w-64 rounded-full bg-[#C06A52]/20 blur-3xl" />
-          <div className="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-[#A98DA0]/20 blur-3xl" />
-        </div>
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-7 px-6 text-center">
+      <section className="relative overflow-hidden bg-[#F6F1EC] py-20">
+        <div className="mx-auto max-w-5xl px-6">
           <Reveal>
-            <Sparkles className="h-9 w-9 text-[#C06A52]" strokeWidth={1.5} />
-            <h2 className="mt-4 font-bricolage text-4xl font-bold leading-tight text-[#F6F1EC]">
-              Preçário sob marcação.
-            </h2>
-            <p className="mt-4 text-lg text-[#F6F1EC]/75">
-              Conta-nos o que procuras e indicamos-te o serviço e o valor. Marcação por telefone,
-              WhatsApp ou DM do Instagram.
-            </p>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <a
-                href={brand.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#C06A52] px-8 py-4 font-sans text-base font-bold text-[#F6F1EC] transition-colors hover:bg-[#a85842] cursor-pointer"
-              >
-                <Phone className="h-5 w-5" /> Marcar agora
-              </a>
-              <Link
-                to={siteLink(slug, 'contacto')}
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 px-8 py-4 font-sans text-base font-bold text-[#F6F1EC] transition-colors hover:bg-white/10 cursor-pointer"
-              >
-                Ver contactos <ArrowRight className="h-4 w-4" />
-              </Link>
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#C06A52] to-[#A98DA0] px-8 py-14 text-center sm:px-14 sm:py-16">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-[#1B1714]/15 blur-3xl" />
+              <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-7">
+                <Sparkles className="h-9 w-9 text-white" strokeWidth={1.5} />
+                <h2 className="font-bricolage text-4xl font-bold leading-tight text-white">
+                  Preçário sob marcação.
+                </h2>
+                <p className="text-lg text-white/85">
+                  Conta-nos o que procuras e indicamos-te o serviço e o valor. Marcação por telefone,
+                  WhatsApp ou DM do Instagram.
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  <a
+                    href={brand.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#1B1714] px-8 py-4 font-sans text-base font-bold text-[#F6F1EC] transition-transform duration-200 hover:scale-[1.02] cursor-pointer"
+                  >
+                    <Phone className="h-5 w-5" /> Marcar agora
+                  </a>
+                  <Link
+                    to={siteLink(slug, 'contacto')}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/40 px-8 py-4 font-sans text-base font-bold text-white transition-colors hover:bg-white/10 cursor-pointer"
+                  >
+                    Ver contactos <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+                <a
+                  href={brand.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-white/80 transition-colors hover:text-white cursor-pointer"
+                >
+                  <Instagram className="h-4 w-4" /> {brand.instagramHandle}
+                </a>
+              </div>
             </div>
-          </Reveal>
-          <Reveal delay={180}>
-            <a
-              href={brand.instagram}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-[#F6F1EC]/70 transition-colors hover:text-[#C06A52] cursor-pointer"
-            >
-              <Instagram className="h-4 w-4" /> {brand.instagramHandle}
-            </a>
           </Reveal>
         </div>
       </section>

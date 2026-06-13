@@ -19,25 +19,28 @@ export default function Sobre() {
 
   return (
     <>
-      {/* Page hero (deep-blue) */}
-      <section className="relative overflow-hidden bg-[#0A2E5C] px-6 pt-40 pb-20">
+      {/* Page hero (light) */}
+      <section className="relative overflow-hidden bg-[#F2F6FC] px-6 pt-40 pb-20">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute -right-24 -top-32 h-[32rem] w-[32rem] rounded-full bg-[#2C7BE5]/25 blur-[110px]" />
+          <div className="absolute -right-24 -top-32 h-[32rem] w-[32rem] rounded-full bg-[#2C7BE5]/10 blur-[110px]" />
           <div
-            className="absolute inset-0 opacity-[0.06]"
+            className="absolute inset-0"
             style={{
               backgroundImage:
-                'linear-gradient(#EAF1FB 1px, transparent 1px), linear-gradient(90deg, #EAF1FB 1px, transparent 1px)',
+                'linear-gradient(#0A2E5C 1px, transparent 1px), linear-gradient(90deg, #0A2E5C 1px, transparent 1px)',
               backgroundSize: '56px 56px',
+              maskImage: 'radial-gradient(ellipse at top right, black, transparent 70%)',
+              WebkitMaskImage: 'radial-gradient(ellipse at top right, black, transparent 70%)',
+              opacity: 0.05,
             }}
           />
         </div>
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#5BC8E8]">
+            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#C25E00]">
               Quem somos
             </span>
-            <h1 className="mt-3 max-w-3xl font-archivo text-5xl font-extrabold leading-[1.04] tracking-tight text-[#EAF1FB] sm:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-archivo text-5xl font-extrabold leading-[1.04] tracking-tight text-[#0A2E5C] sm:text-6xl">
               Mais de 45 anos a climatizar Portugal.
             </h1>
           </Reveal>
@@ -48,19 +51,20 @@ export default function Sobre() {
       <section className="bg-white py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0A2E5C] to-[#103a73] p-10">
-              <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-[#5BC8E8]/15 blur-2xl" />
-              <Quote className="relative h-10 w-10 text-[#5BC8E8]" />
-              <p className="relative mt-6 font-archivo text-2xl font-bold leading-snug text-[#EAF1FB]">
+            <div className="relative overflow-hidden rounded-3xl border border-[#0A2E5C]/10 bg-white p-10 shadow-sm">
+              <span className="absolute inset-y-0 left-0 w-1.5 bg-[#FF7F00]" />
+              <div className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full bg-[#FF7F00]/10 blur-2xl" />
+              <Quote className="relative h-10 w-10 text-[#FF7F00]" />
+              <p className="relative mt-6 font-archivo text-2xl font-bold leading-snug text-[#0A2E5C]">
                 “{brand.motto}”
               </p>
-              <div className="relative mt-8 flex items-center gap-4 border-t border-white/10 pt-6">
-                <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#5BC8E8] font-archivo text-lg font-extrabold text-[#0A2E5C]">
+              <div className="relative mt-8 flex items-center gap-4 border-t border-[#0A2E5C]/10 pt-6">
+                <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#FF7F00] font-archivo text-lg font-extrabold text-white">
                   N
                 </span>
                 <div>
-                  <p className="font-archivo font-bold text-[#EAF1FB]">Nipolândia</p>
-                  <p className="text-sm text-[#9fbce6]">Ar Condicionado, Ventilação, Lda. · desde 1977</p>
+                  <p className="font-archivo font-bold text-[#0A2E5C]">Nipolândia</p>
+                  <p className="text-sm text-[#5B7493]">Ar Condicionado, Ventilação, Lda. · desde 1977</p>
                 </div>
               </div>
             </div>
@@ -136,7 +140,7 @@ export default function Sobre() {
             {partners.map((p, i) => (
               <Reveal key={p.name} delay={i * 90}>
                 <div className="flex h-full flex-col items-center rounded-2xl border border-[#0A2E5C]/10 bg-white p-8 text-center">
-                  <span className="grid h-12 w-12 place-items-center rounded-full bg-[#0A2E5C] text-[#5BC8E8]">
+                  <span className="grid h-12 w-12 place-items-center rounded-full bg-[#0A2E5C] text-[#FF9A3C]">
                     <p.icon className="h-6 w-6" strokeWidth={1.7} />
                   </span>
                   <p className="mt-5 font-archivo text-lg font-bold text-[#0A2E5C]">{p.name}</p>
@@ -163,7 +167,7 @@ export default function Sobre() {
             {values.map((v, i) => (
               <Reveal key={v.title} delay={i * 90}>
                 <div className="h-full rounded-2xl bg-[#F2F6FC] p-8 ring-1 ring-[#0A2E5C]/5">
-                  <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-[#5BC8E8]/20 text-[#2C7BE5]">
+                  <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-[#2C7BE5]/10 text-[#2C7BE5]">
                     <v.icon className="h-6 w-6" strokeWidth={1.7} />
                   </span>
                   <h3 className="mt-5 font-archivo text-xl font-bold text-[#0A2E5C]">{v.title}</h3>
@@ -225,28 +229,28 @@ export default function Sobre() {
       </section>
 
       {/* CTA */}
-      <section className="bg-white py-20">
+      <section className="bg-[#F2F6FC] py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0A2E5C] to-[#103a73] px-8 py-14 text-center sm:px-14">
-              <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#5BC8E8]/15 blur-3xl" />
+            <div className="relative overflow-hidden rounded-3xl border border-[#0A2E5C]/10 bg-white px-8 py-14 text-center shadow-sm sm:px-14">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#FF7F00]/10 blur-3xl" />
               <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-7">
                 <div className="flex flex-wrap items-center justify-center gap-2">
                   {badges.slice(0, 3).map((b) => (
                     <span
                       key={b}
-                      className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold text-[#9fbce6]"
+                      className="rounded-full border border-[#0A2E5C]/10 bg-[#F2F6FC] px-3 py-1 text-[11px] font-semibold text-[#5B7493]"
                     >
                       {b}
                     </span>
                   ))}
                 </div>
-                <h2 className="font-archivo text-3xl font-extrabold leading-tight text-[#EAF1FB] text-balance sm:text-4xl">
+                <h2 className="font-archivo text-3xl font-extrabold leading-tight text-[#0A2E5C] text-balance sm:text-4xl">
                   Trabalhe com um parceiro de confiança.
                 </h2>
                 <Link
                   to={siteLink(slug, 'contacto')}
-                  className="inline-flex items-center gap-2 rounded-lg bg-[#5BC8E8] px-8 py-4 font-sans text-base font-bold text-[#0A2E5C] transition-transform hover:scale-[1.02] cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#FF7F00] px-8 py-4 font-sans text-base font-bold text-white shadow-lg shadow-[#FF7F00]/25 transition-all hover:scale-[1.02] cursor-pointer"
                 >
                   Falar com a Nipolândia <ArrowRight className="h-4 w-4" />
                 </Link>

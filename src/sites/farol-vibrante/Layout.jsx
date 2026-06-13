@@ -6,6 +6,7 @@ import { useScrolled } from '../../shared/hooks'
 import { slug, brand, nav } from './data.jsx'
 
 // Structural "F" beacon mark — an I-beam glyph with an amber light on top.
+// Generic structural wordmark device (the brand has no real logo), not a borrowed asset.
 function BeaconMark({ className = '' }) {
   return (
     <svg viewBox="0 0 32 32" className={className} fill="none" aria-hidden="true">
@@ -18,17 +19,17 @@ function BeaconMark({ className = '' }) {
   )
 }
 
-function Brandmark({ onDark }) {
+function Brandmark() {
   return (
     <NavLink to={siteLink(slug)} className="group flex items-center gap-2.5 cursor-pointer">
-      <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#F2A33C] ring-1 ring-[#F2A33C]/40 transition-transform duration-200 group-hover:scale-[1.04]">
-        <BeaconMark className="h-6 w-6 text-[#14181D]" />
+      <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#14181D] ring-1 ring-[#14181D]/15 transition-transform duration-200 group-hover:scale-[1.04]">
+        <BeaconMark className="h-6 w-6 text-[#ECEFF2]" />
       </span>
       <span className="leading-none">
-        <span className={cn('block font-sora text-lg font-bold tracking-tight', onDark ? 'text-[#ECEFF2]' : 'text-[#14181D]')}>
+        <span className="block font-sora text-lg font-bold tracking-tight text-[#14181D]">
           Farol Vibrante
         </span>
-        <span className={cn('mt-0.5 block font-sans text-[10px] font-semibold uppercase tracking-[0.22em]', onDark ? 'text-[#7C8B9C]' : 'text-[#7C8B9C]')}>
+        <span className="mt-0.5 block font-sans text-[10px] font-semibold uppercase tracking-[0.22em] text-[#5E6B78]">
           Construções LSF
         </span>
       </span>
@@ -39,28 +40,28 @@ function Brandmark({ onDark }) {
 export default function Layout() {
   const scrolled = useScrolled(40)
   const [open, setOpen] = useState(false)
-  // Header sits over a DARK hero. At top: light nav text. On scroll: solid surface, still light text.
-  const onDark = true
+  // Header is a solid LIGHT surface in both states so nav contrast stays consistent
+  // and safe (>=4.5:1) over both the dark hero and the light page body.
 
   const linkClass = ({ isActive }) =>
     cn(
       'relative font-sans text-sm font-semibold transition-colors duration-200 cursor-pointer',
-      isActive ? 'text-[#F2A33C]' : 'text-[#C7D0DA] hover:text-[#ECEFF2]',
+      isActive ? 'text-[#945600]' : 'text-[#4A5763] hover:text-[#14181D]',
     )
 
   return (
-    <div className="min-h-screen bg-[#14181D] font-sans text-[#ECEFF2]">
+    <div className="min-h-screen bg-[#F7F8FA] font-sans text-[#14181D]">
       {/* Header */}
       <header
         className={cn(
-          'fixed inset-x-0 top-0 z-50 transition-all duration-300',
+          'fixed inset-x-0 top-0 z-50 border-b bg-[#FFFFFF]/95 backdrop-blur-md transition-all duration-300',
           scrolled
-            ? 'border-b border-white/10 bg-[#14181D]/92 py-3 shadow-lg shadow-black/30 backdrop-blur-md'
-            : 'py-5',
+            ? 'border-[#E2E6EA] py-3 shadow-sm shadow-[#14181D]/5'
+            : 'border-transparent py-5',
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-          <Brandmark onDark={onDark} />
+          <Brandmark />
 
           <nav className="hidden items-center gap-9 md:flex">
             {nav.map((n) => (
@@ -83,7 +84,7 @@ export default function Layout() {
           <div className="hidden md:block">
             <Link
               to={siteLink(slug, 'contacto')}
-              className="group inline-flex items-center gap-2 rounded-lg bg-[#F2A33C] px-5 py-2.5 font-sans text-sm font-bold text-[#14181D] transition-colors duration-200 hover:bg-[#ffb651] cursor-pointer"
+              className="group inline-flex items-center gap-2 rounded-lg bg-[#F2A33C] px-5 py-2.5 font-sans text-sm font-bold text-[#14181D] transition-colors duration-200 hover:bg-[#E2912A] cursor-pointer"
             >
               Pedir orçamento
               <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -92,7 +93,7 @@ export default function Layout() {
 
           <button
             onClick={() => setOpen((v) => !v)}
-            className="text-[#ECEFF2] md:hidden cursor-pointer"
+            className="text-[#14181D] md:hidden cursor-pointer"
             aria-label={open ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={open}
           >
@@ -102,7 +103,7 @@ export default function Layout() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="mx-4 mt-3 rounded-2xl border border-white/10 bg-[#1C2128] p-4 shadow-2xl shadow-black/40 md:hidden">
+          <div className="mx-4 mt-3 rounded-2xl border border-[#E2E6EA] bg-[#FFFFFF] p-4 shadow-xl shadow-[#14181D]/10 md:hidden">
             <nav className="flex flex-col">
               {nav.map((n) => (
                 <NavLink
@@ -113,7 +114,7 @@ export default function Layout() {
                   className={({ isActive }) =>
                     cn(
                       'rounded-xl px-4 py-3 font-sans text-base font-semibold cursor-pointer',
-                      isActive ? 'bg-[#F2A33C]/10 text-[#F2A33C]' : 'text-[#C7D0DA] hover:bg-white/5',
+                      isActive ? 'bg-[#F2A33C]/12 text-[#945600]' : 'text-[#4A5763] hover:bg-[#F7F8FA]',
                     )
                   }
                 >
@@ -137,24 +138,24 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#0F1318] text-[#9AA7B4]">
+      <footer className="border-t border-[#E2E6EA] bg-[#EDF0F3] text-[#4A5763]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5">
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#F2A33C]">
-                <BeaconMark className="h-6 w-6 text-[#14181D]" />
+              <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#14181D]">
+                <BeaconMark className="h-6 w-6 text-[#ECEFF2]" />
               </span>
-              <span className="font-sora text-lg font-bold text-[#ECEFF2]">Farol Vibrante</span>
+              <span className="font-sora text-lg font-bold text-[#14181D]">Farol Vibrante</span>
             </div>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#7C8B9C]">{brand.intro}</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#4A5763]">{brand.intro}</p>
           </div>
 
           <div>
-            <h4 className="font-sora text-sm font-bold uppercase tracking-wider text-[#ECEFF2]">Navegação</h4>
+            <h4 className="font-sora text-sm font-bold uppercase tracking-wider text-[#14181D]">Navegação</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {nav.map((n) => (
                 <li key={n.to}>
-                  <NavLink to={siteLink(slug, n.to)} end={n.to === ''} className="transition-colors hover:text-[#F2A33C] cursor-pointer">
+                  <NavLink to={siteLink(slug, n.to)} end={n.to === ''} className="transition-colors hover:text-[#945600] cursor-pointer">
                     {n.label}
                   </NavLink>
                 </li>
@@ -163,33 +164,33 @@ export default function Layout() {
           </div>
 
           <div>
-            <h4 className="font-sora text-sm font-bold uppercase tracking-wider text-[#ECEFF2]">Onde estamos</h4>
+            <h4 className="font-sora text-sm font-bold uppercase tracking-wider text-[#14181D]">Onde estamos</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <li className="flex items-start gap-2 text-[#7C8B9C]">
+              <li className="flex items-start gap-2 text-[#4A5763]">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#F2A33C]" /> {brand.address}
               </li>
-              <li className="text-[#7C8B9C]">{brand.domain}</li>
+              <li className="text-[#5E6B78]">{brand.domain}</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-sora text-sm font-bold uppercase tracking-wider text-[#ECEFF2]">Orçamentos</h4>
-            <p className="mt-4 text-sm leading-relaxed text-[#7C8B9C]">
+            <h4 className="font-sora text-sm font-bold uppercase tracking-wider text-[#14181D]">Orçamentos</h4>
+            <p className="mt-4 text-sm leading-relaxed text-[#4A5763]">
               Conte-nos o seu projeto e damos-lhe orientação técnica em Light Steel Framing.
             </p>
             <Link
               to={siteLink(slug, 'contacto')}
-              className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[#F2A33C]/40 px-4 py-2 text-sm font-bold text-[#F2A33C] transition-colors hover:bg-[#F2A33C] hover:text-[#14181D] cursor-pointer"
+              className="mt-4 inline-flex items-center gap-2 rounded-lg border border-[#F2A33C] px-4 py-2 text-sm font-bold text-[#945600] transition-colors hover:bg-[#F2A33C] hover:text-[#14181D] cursor-pointer"
             >
               Pedir orçamento <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
-        <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-[#5e6b78] sm:flex-row">
+        <div className="border-t border-[#E2E6EA]">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-[#5E6B78] sm:flex-row">
             <p>© 2025 Farol Vibrante — Construções LSF. Todos os direitos reservados.</p>
             <p>
-              Redesenhado por <span className="font-semibold text-[#9AA7B4]">ProofStudio</span>
+              Redesenhado por <span className="font-semibold text-[#4A5763]">ProofStudio</span>
             </p>
           </div>
         </div>

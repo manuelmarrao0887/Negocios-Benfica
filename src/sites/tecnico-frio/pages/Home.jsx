@@ -18,14 +18,14 @@ export default function Home() {
         {/* cool decoration */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -right-40 -top-32 h-[34rem] w-[34rem] rounded-full bg-[#16B5C9]/15 blur-3xl" />
-          <div className="absolute -left-44 bottom-0 h-[30rem] w-[30rem] rounded-full bg-[#0E7FC1]/10 blur-3xl" />
-          <Snowflake className="absolute right-8 top-28 hidden h-72 w-72 text-[#0E7FC1]/[0.05] lg:block" strokeWidth={1} aria-hidden="true" />
+          <div className="absolute -left-44 bottom-0 h-[30rem] w-[30rem] rounded-full bg-[#0B6CC0]/10 blur-3xl" />
+          <Snowflake className="absolute right-8 top-28 hidden h-72 w-72 text-[#0B6CC0]/[0.05] lg:block" strokeWidth={1} aria-hidden="true" />
         </div>
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <Reveal>
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#0E7FC1]/20 bg-white/70 px-4 py-1.5 font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#0E7FC1] backdrop-blur-sm">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#0B6CC0]/20 bg-white/70 px-4 py-1.5 font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#0B6CC0] backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#16B5C9]" /> Grande Lisboa · Ao domicílio
               </span>
             </Reveal>
@@ -43,13 +43,13 @@ export default function Home() {
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Link
                   to={siteLink(slug, 'contacto')}
-                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0E7FC1] to-[#16B5C9] px-7 py-3.5 font-sans text-base font-bold text-white shadow-lg shadow-[#0E7FC1]/25 transition-all duration-200 hover:shadow-xl hover:brightness-105 cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0B6CC0] to-[#16B5C9] px-7 py-3.5 font-sans text-base font-bold text-white shadow-lg shadow-[#0B6CC0]/25 transition-all duration-200 hover:shadow-xl hover:brightness-105 cursor-pointer"
                 >
                   {brand.cta} <ArrowRight className="h-4 w-4" />
                 </Link>
                 <a
                   href={brand.phoneHref}
-                  className="inline-flex items-center gap-2 rounded-full border border-[#0B2536]/15 bg-white px-7 py-3.5 font-sans text-base font-bold text-[#0B2536] transition-colors duration-200 hover:border-[#0E7FC1]/40 hover:text-[#0E7FC1] cursor-pointer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#0B2536]/15 bg-white px-7 py-3.5 font-sans text-base font-bold text-[#0B2536] transition-colors duration-200 hover:border-[#0B6CC0]/40 hover:text-[#0B6CC0] cursor-pointer"
                 >
                   <Phone className="h-4 w-4" /> {brand.phoneDisplay}
                 </a>
@@ -74,7 +74,7 @@ export default function Home() {
               <ul className="mt-6 space-y-3">
                 {['Diagnóstico rápido ao domicílio', 'Equipamento residencial e comercial', 'Ar condicionado e frigoríficos'].map((t) => (
                   <li key={t} className="flex items-center gap-3 text-sm font-semibold">
-                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white">
+                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] text-white">
                       <Check className="h-3.5 w-3.5" strokeWidth={3} />
                     </span>
                     {t}
@@ -107,7 +107,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden px-6 lg:grid-cols-4">
           {highlights.map((h, i) => (
             <Reveal key={h.title} delay={i * 70} className="px-2 py-8 sm:px-6">
-              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#0E7FC1]/10 text-[#0E7FC1]">
+              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#0B6CC0]/10 text-[#0B6CC0]">
                 <h.icon className="h-6 w-6" strokeWidth={1.7} />
               </span>
               <h3 className="mt-4 font-outfit text-lg font-semibold text-[#0B2536]">{h.title}</h3>
@@ -132,7 +132,7 @@ export default function Home() {
             <Reveal delay={120}>
               <Link
                 to={siteLink(slug, 'servicos')}
-                className="inline-flex shrink-0 items-center gap-2 font-sans text-sm font-bold text-[#0E7FC1] transition-colors hover:text-[#16B5C9] cursor-pointer"
+                className="inline-flex shrink-0 items-center gap-2 font-sans text-sm font-bold text-[#0B6CC0] transition-colors hover:text-[#16B5C9] cursor-pointer"
               >
                 Ver todos os serviços <ArrowRight className="h-4 w-4" />
               </Link>
@@ -142,8 +142,8 @@ export default function Home() {
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
             {services.map((s, i) => (
               <Reveal key={s.id} delay={(i % 3) * 80}>
-                <div className="group flex h-full flex-col rounded-2xl border border-[#0B2536]/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#16B5C9]/50 hover:shadow-xl hover:shadow-[#0E7FC1]/10">
-                  <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-[#0E7FC1]/10 text-[#0E7FC1] transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#0E7FC1] group-hover:to-[#16B5C9] group-hover:text-white">
+                <div className="group flex h-full flex-col rounded-2xl border border-[#0B2536]/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#16B5C9]/50 hover:shadow-xl hover:shadow-[#0B6CC0]/10">
+                  <span className="inline-grid h-12 w-12 place-items-center rounded-xl bg-[#0B6CC0]/10 text-[#0B6CC0] transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#0B6CC0] group-hover:to-[#16B5C9] group-hover:text-white">
                     <s.icon className="h-6 w-6" strokeWidth={1.7} />
                   </span>
                   <p className="mt-5 font-sans text-xs font-bold uppercase tracking-wide text-[#16B5C9]">{s.eyebrow}</p>
@@ -151,7 +151,7 @@ export default function Home() {
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-[#4A5E70]">{s.desc}</p>
                   <Link
                     to={siteLink(slug, 'servicos')}
-                    className="mt-5 inline-flex items-center gap-1.5 font-sans text-sm font-bold text-[#0E7FC1] transition-colors hover:text-[#16B5C9] cursor-pointer"
+                    className="mt-5 inline-flex items-center gap-1.5 font-sans text-sm font-bold text-[#0B6CC0] transition-colors hover:text-[#16B5C9] cursor-pointer"
                   >
                     Saber mais <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
@@ -181,7 +181,7 @@ export default function Home() {
               <Reveal key={p.problem} delay={(i % 3) * 80}>
                 <div className="flex h-full flex-col rounded-2xl border border-[#0B2536]/10 bg-[#F1F8FC] p-6 transition-all duration-300 hover:border-[#16B5C9]/50 hover:shadow-lg">
                   <div className="flex items-center gap-3">
-                    <span className="inline-grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white text-[#0E7FC1] shadow-sm">
+                    <span className="inline-grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white text-[#0B6CC0] shadow-sm">
                       <p.icon className="h-5 w-5" strokeWidth={1.8} />
                     </span>
                     <h3 className="font-outfit text-base font-semibold text-[#0B2536]">{p.problem}</h3>
@@ -200,7 +200,7 @@ export default function Home() {
       {/* ── Process / fast diagnosis ─────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#0B2536] py-24">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-[#0E7FC1]/20 blur-3xl" />
+          <div className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-[#0B6CC0]/20 blur-3xl" />
           <div className="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-[#16B5C9]/15 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6">
@@ -217,7 +217,7 @@ export default function Home() {
               <Reveal key={s.step} delay={i * 90}>
                 <div className="relative h-full rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-sm transition-colors duration-300 hover:bg-white/[0.07]">
                   <span className="font-outfit text-5xl font-bold text-[#16B5C9]/30">{s.step}</span>
-                  <span className="mt-3 inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white">
+                  <span className="mt-3 inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] text-white">
                     <s.icon className="h-5 w-5" strokeWidth={1.8} />
                   </span>
                   <h3 className="mt-4 font-outfit text-lg font-semibold text-white">{s.title}</h3>
@@ -248,7 +248,7 @@ export default function Home() {
             {areas.map((a, i) => (
               <Reveal key={a.title} delay={i * 80}>
                 <div className="h-full rounded-2xl border border-[#0B2536]/10 bg-white p-7">
-                  <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#0E7FC1]/10 text-[#0E7FC1]">
+                  <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#0B6CC0]/10 text-[#0B6CC0]">
                     <a.icon className="h-5 w-5" strokeWidth={1.8} />
                   </span>
                   <h3 className="mt-4 font-outfit text-lg font-semibold text-[#0B2536]">{a.title}</h3>
@@ -292,7 +292,7 @@ export default function Home() {
             {trust.map((t, i) => (
               <Reveal key={t.title} delay={i * 80}>
                 <div className="h-full rounded-2xl bg-[#F1F8FC] p-7 ring-1 ring-[#0B2536]/5">
-                  <span className="inline-grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] text-white">
+                  <span className="inline-grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] text-white">
                     <t.icon className="h-6 w-6" strokeWidth={1.7} />
                   </span>
                   <h3 className="mt-5 font-outfit text-lg font-semibold text-[#0B2536]">{t.title}</h3>
@@ -305,7 +305,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA band ─────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0E7FC1] to-[#16B5C9] py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0B6CC0] to-[#16B5C9] py-20">
         <div className="pointer-events-none absolute inset-0">
           <Snowflake className="absolute -left-10 -top-10 h-72 w-72 text-white/10" strokeWidth={0.8} aria-hidden="true" />
           <Snowflake className="absolute -bottom-16 right-0 h-80 w-80 text-white/10" strokeWidth={0.8} aria-hidden="true" />
@@ -323,7 +323,7 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
                 href={brand.phoneHref}
-                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-sans text-base font-bold text-[#0E7FC1] shadow-lg transition-transform duration-200 hover:scale-[1.02] cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-sans text-base font-bold text-[#0B6CC0] shadow-lg transition-transform duration-200 hover:scale-[1.02] cursor-pointer"
               >
                 <Phone className="h-5 w-5" /> {brand.phoneDisplay}
               </a>

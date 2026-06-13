@@ -8,8 +8,8 @@ import { slug, brand, nav, partners } from './data.jsx'
 function Brandmark() {
   return (
     <NavLink to={siteLink(slug)} className="group flex items-center gap-3 cursor-pointer">
-      <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#1C6DD0] font-manrope text-base font-extrabold tracking-tight text-white shadow-sm shadow-[#1C6DD0]/30 transition-colors duration-200 group-hover:bg-[#1559a8]">
-        IRI
+      <span className="grid h-11 w-11 place-items-center rounded-lg bg-white p-1 shadow-sm ring-1 ring-[#14202B]/10 transition-shadow duration-200 group-hover:shadow-md">
+        <img src="/logos/iri.gif" alt="IRI logótipo" className="h-9 w-auto" />
       </span>
       <span className="leading-none">
         <span className="block font-manrope text-lg font-bold tracking-tight text-[#14202B]">IRI</span>
@@ -28,7 +28,7 @@ export default function Layout() {
   const linkClass = ({ isActive }) =>
     cn(
       'relative font-sans text-sm font-semibold transition-colors duration-200 cursor-pointer',
-      isActive ? 'text-[#1C6DD0]' : 'text-[#33424E] hover:text-[#14202B]',
+      isActive ? 'text-[#007A79]' : 'text-[#33424E] hover:text-[#14202B]',
     )
 
   return (
@@ -51,7 +51,7 @@ export default function Layout() {
                     {n.label}
                     <span
                       className={cn(
-                        'mt-1 h-0.5 w-full origin-center rounded-full bg-[#1C6DD0] transition-transform duration-200',
+                        'mt-1 h-0.5 w-full origin-center rounded-full bg-[#007A79] transition-transform duration-200',
                         isActive ? 'scale-x-100' : 'scale-x-0',
                       )}
                     />
@@ -64,7 +64,7 @@ export default function Layout() {
           <div className="hidden md:block">
             <a
               href={brand.phoneStoreHref}
-              className="inline-flex items-center gap-2 rounded-lg bg-[#1C6DD0] px-5 py-2.5 font-sans text-sm font-bold text-white shadow-sm shadow-[#1C6DD0]/30 transition-colors duration-200 hover:bg-[#1559a8] cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#007A79] px-5 py-2.5 font-sans text-sm font-bold text-white shadow-sm shadow-[#007A79]/30 transition-colors duration-200 hover:bg-[#006D6C] cursor-pointer"
             >
               <Phone className="h-4 w-4" /> Pedir orçamento
             </a>
@@ -93,7 +93,7 @@ export default function Layout() {
                   className={({ isActive }) =>
                     cn(
                       'rounded-xl px-4 py-3 font-sans text-base font-semibold cursor-pointer',
-                      isActive ? 'bg-[#1C6DD0]/10 text-[#1C6DD0]' : 'text-[#33424E]',
+                      isActive ? 'bg-[#007A79]/10 text-[#007A79]' : 'text-[#33424E]',
                     )
                   }
                 >
@@ -102,7 +102,7 @@ export default function Layout() {
               ))}
               <a
                 href={brand.phoneStoreHref}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#1C6DD0] px-4 py-3 font-sans text-base font-bold text-white cursor-pointer"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-[#007A79] px-4 py-3 font-sans text-base font-bold text-white cursor-pointer"
               >
                 <Phone className="h-4 w-4" /> {brand.phoneStoreDisplay}
               </a>
@@ -120,8 +120,8 @@ export default function Layout() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#1C6DD0] font-manrope text-base font-extrabold text-white">
-                IRI
+              <span className="grid h-11 w-11 place-items-center rounded-lg bg-white p-1 ring-1 ring-white/15">
+                <img src="/logos/iri.gif" alt="IRI logótipo" className="h-9 w-auto" />
               </span>
               <span className="font-manrope text-lg font-bold text-white">IRI, Lda.</span>
             </div>
@@ -148,7 +148,7 @@ export default function Layout() {
                   <NavLink
                     to={siteLink(slug, n.to)}
                     end={n.to === ''}
-                    className="transition-colors hover:text-[#F0A93B] cursor-pointer"
+                    className="transition-colors hover:text-[#FAA734] cursor-pointer"
                   >
                     {n.label}
                   </NavLink>
@@ -161,20 +161,20 @@ export default function Layout() {
             <h4 className="font-manrope text-base font-bold text-white">Contactos</h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <a href={brand.phoneStoreHref} className="flex items-center gap-2 transition-colors hover:text-[#F0A93B] cursor-pointer">
-                  <Phone className="h-4 w-4 text-[#1C6DD0]" /> {brand.phoneStoreDisplay}
+                <a href={brand.phoneStoreHref} className="flex items-center gap-2 transition-colors hover:text-[#FAA734] cursor-pointer">
+                  <Phone className="h-4 w-4 text-[#007A79]" /> {brand.phoneStoreDisplay}
                   <span className="text-xs text-[#6f8190]">· Loja</span>
                 </a>
               </li>
               <li>
-                <a href={brand.phoneWorksHref} className="flex items-center gap-2 transition-colors hover:text-[#F0A93B] cursor-pointer">
-                  <Phone className="h-4 w-4 text-[#1C6DD0]" /> {brand.phoneWorksDisplay}
+                <a href={brand.phoneWorksHref} className="flex items-center gap-2 transition-colors hover:text-[#FAA734] cursor-pointer">
+                  <Phone className="h-4 w-4 text-[#007A79]" /> {brand.phoneWorksDisplay}
                   <span className="text-xs text-[#6f8190]">· Obras</span>
                 </a>
               </li>
               <li>
-                <a href={`mailto:${brand.emailComercial}`} className="flex items-center gap-2 transition-colors hover:text-[#F0A93B] cursor-pointer">
-                  <Mail className="h-4 w-4 text-[#1C6DD0]" /> {brand.emailComercial}
+                <a href={`mailto:${brand.emailComercial}`} className="flex items-center gap-2 transition-colors hover:text-[#FAA734] cursor-pointer">
+                  <Mail className="h-4 w-4 text-[#007A79]" /> {brand.emailComercial}
                 </a>
               </li>
             </ul>
@@ -183,7 +183,7 @@ export default function Layout() {
           <div>
             <h4 className="font-manrope text-base font-bold text-white">Loja</h4>
             <p className="mt-4 flex items-start gap-2 text-sm text-[#8497A6]">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#1C6DD0]" /> {brand.address}
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#007A79]" /> {brand.address}
             </p>
             <p className="mt-3 text-sm text-[#8497A6]">{brand.hours}</p>
           </div>

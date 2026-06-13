@@ -47,7 +47,7 @@ export default function Contacto() {
         />
         <div className="relative mx-auto max-w-7xl">
           <Reveal>
-            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#1C6DD0]">
+            <span className="font-sans text-sm font-bold uppercase tracking-[0.15em] text-[#007A79]">
               Contacto
             </span>
             <h1 className="mt-3 max-w-3xl font-manrope text-4xl font-extrabold leading-[1.05] tracking-tight text-[#14202B] sm:text-5xl">
@@ -68,9 +68,9 @@ export default function Contacto() {
             <Reveal key={c.label} delay={i * 80}>
               <a
                 href={c.href}
-                className="group flex h-full items-center gap-5 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1C6DD0]/40 hover:shadow-lg cursor-pointer"
+                className="group flex h-full items-center gap-5 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#007A79]/40 hover:shadow-lg cursor-pointer"
               >
-                <span className="inline-grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-[#1C6DD0] text-white transition-colors group-hover:bg-[#1559a8]">
+                <span className="inline-grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-[#007A79] text-white transition-colors group-hover:bg-[#006D6C]">
                   <c.icon className="h-7 w-7" strokeWidth={1.6} />
                 </span>
                 <div>
@@ -90,9 +90,9 @@ export default function Contacto() {
           <Reveal delay={0}>
             <a
               href={brand.mobileHref}
-              className="flex h-full flex-col gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1C6DD0]/40 hover:shadow-lg cursor-pointer"
+              className="flex h-full flex-col gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#007A79]/40 hover:shadow-lg cursor-pointer"
             >
-              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#1C6DD0] text-white">
+              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#007A79] text-white">
                 <Smartphone className="h-5 w-5" />
               </span>
               <div>
@@ -104,9 +104,9 @@ export default function Contacto() {
           <Reveal delay={70}>
             <a
               href={`mailto:${brand.emailComercial}`}
-              className="flex h-full flex-col gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1C6DD0]/40 hover:shadow-lg cursor-pointer"
+              className="flex h-full flex-col gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#007A79]/40 hover:shadow-lg cursor-pointer"
             >
-              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#1C6DD0] text-white">
+              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#007A79] text-white">
                 <Mail className="h-5 w-5" />
               </span>
               <div>
@@ -118,9 +118,9 @@ export default function Contacto() {
           <Reveal delay={140}>
             <a
               href={`mailto:${brand.emailInfo}`}
-              className="flex h-full flex-col gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1C6DD0]/40 hover:shadow-lg cursor-pointer"
+              className="flex h-full flex-col gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#007A79]/40 hover:shadow-lg cursor-pointer"
             >
-              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#1C6DD0] text-white">
+              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#007A79] text-white">
                 <Mail className="h-5 w-5" />
               </span>
               <div>
@@ -131,7 +131,7 @@ export default function Contacto() {
           </Reveal>
           <Reveal delay={210}>
             <div className="flex h-full flex-col gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6">
-              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#1C6DD0] text-white">
+              <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-[#007A79] text-white">
                 <Clock className="h-5 w-5" />
               </span>
               <div>
@@ -152,7 +152,7 @@ export default function Contacto() {
               <h2 className="font-manrope text-2xl font-bold text-[#14202B]">Pedir orçamento ou informação</h2>
               {sent ? (
                 <div className="mt-8 flex flex-col items-center gap-4 rounded-2xl bg-[#14202B] p-10 text-center text-white">
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#1C6DD0] text-white">
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#007A79] text-white">
                     <Check className="h-7 w-7" strokeWidth={3} />
                   </span>
                   <p className="font-manrope text-xl font-bold">Mensagem enviada!</p>
@@ -188,7 +188,7 @@ export default function Contacto() {
                       id="assunto"
                       value={form.assunto}
                       onChange={update('assunto')}
-                      className="w-full cursor-pointer rounded-xl border border-[#14202B]/15 bg-white px-4 py-3 font-sans text-[#14202B] outline-none transition-colors focus:border-[#1C6DD0] focus:ring-2 focus:ring-[#1C6DD0]/25"
+                      className="w-full cursor-pointer rounded-xl border border-[#14202B]/15 bg-white px-4 py-3 font-sans text-[#14202B] outline-none transition-colors focus:border-[#007A79] focus:ring-2 focus:ring-[#007A79]/25"
                     >
                       {['Impermeabilização', 'Revestimentos', 'Isolamento Térmico', 'Isolamento Acústico', 'Pavimentos', 'Compra de materiais (loja)', 'Outro'].map((o) => (
                         <option key={o}>{o}</option>
@@ -206,12 +206,12 @@ export default function Contacto() {
                       value={form.mensagem}
                       onChange={update('mensagem')}
                       placeholder="Descreva o que precisa (local, tipo de obra, materiais...)"
-                      className="w-full rounded-xl border border-[#14202B]/15 bg-white px-4 py-3 font-sans text-[#14202B] outline-none transition-colors placeholder:text-[#9aa8b2] focus:border-[#1C6DD0] focus:ring-2 focus:ring-[#1C6DD0]/25"
+                      className="w-full rounded-xl border border-[#14202B]/15 bg-white px-4 py-3 font-sans text-[#14202B] outline-none transition-colors placeholder:text-[#9aa8b2] focus:border-[#007A79] focus:ring-2 focus:ring-[#007A79]/25"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#1C6DD0] px-7 py-3.5 font-sans text-base font-bold text-white shadow-sm shadow-[#1C6DD0]/30 transition-colors hover:bg-[#1559a8] cursor-pointer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#007A79] px-7 py-3.5 font-sans text-base font-bold text-white shadow-sm shadow-[#007A79]/30 transition-colors hover:bg-[#006D6C] cursor-pointer"
                   >
                     <Send className="h-4 w-4" /> Enviar mensagem
                   </button>
@@ -228,7 +228,7 @@ export default function Contacto() {
           <Reveal delay={120}>
             <div className="flex h-full flex-col gap-5">
               <div className="flex items-start gap-3 rounded-2xl border border-[#14202B]/10 bg-[#F4F6F8] p-6">
-                <span className="inline-grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#1C6DD0] text-white">
+                <span className="inline-grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#007A79] text-white">
                   <MapPin className="h-5 w-5" />
                 </span>
                 <div>
@@ -238,7 +238,7 @@ export default function Contacto() {
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(brand.mapsQuery)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-[#1C6DD0] hover:text-[#1559a8] cursor-pointer"
+                    className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-[#007A79] hover:text-[#006D6C] cursor-pointer"
                   >
                     Abrir no Google Maps →
                   </a>
@@ -274,7 +274,7 @@ function Field({ id, label, type = 'text', placeholder, value, onChange }) {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-[#14202B]/15 bg-white px-4 py-3 font-sans text-[#14202B] outline-none transition-colors placeholder:text-[#9aa8b2] focus:border-[#1C6DD0] focus:ring-2 focus:ring-[#1C6DD0]/25"
+        className="w-full rounded-xl border border-[#14202B]/15 bg-white px-4 py-3 font-sans text-[#14202B] outline-none transition-colors placeholder:text-[#9aa8b2] focus:border-[#007A79] focus:ring-2 focus:ring-[#007A79]/25"
       />
     </div>
   )

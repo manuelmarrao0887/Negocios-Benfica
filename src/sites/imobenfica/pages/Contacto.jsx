@@ -31,17 +31,17 @@ export default function Contacto() {
 
   return (
     <>
-      {/* Page hero */}
-      <section className="bg-[#14233B] px-6 pt-20 pb-16 text-[#F6F3EC]">
+      {/* Page hero (light) */}
+      <section className="border-b border-[#7A1B47]/15 bg-[#F4EAEE] px-6 pt-20 pb-16 text-[#241019]">
         <div className="mx-auto max-w-7xl">
           <Reveal>
-            <span className="font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#B7892E]">
+            <span className="font-sans text-sm font-bold uppercase tracking-[0.18em] text-[#7A1B47]">
               Contacto
             </span>
-            <h1 className="mt-3 max-w-3xl font-playfair text-5xl font-semibold leading-[1.05] sm:text-6xl">
+            <h1 className="mt-3 max-w-3xl font-playfair text-5xl font-semibold leading-[1.05] text-[#241019] sm:text-6xl">
               Vamos avaliar o seu imóvel?
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#bcc6d4]">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-[#46343D]">
               Peça uma avaliação gratuita e sem compromisso, ou fale connosco por telefone, WhatsApp ou
               email. A Marta e a equipa respondem-lhe o mais rápido possível.
             </p>
@@ -61,18 +61,18 @@ export default function Contacto() {
                     ? { href: c.href, ...(c.external ? { target: '_blank', rel: 'noreferrer' } : {}) }
                     : {})}
                   className={
-                    'flex h-full flex-col gap-3 rounded-xl border border-[#14233B]/10 bg-[#F6F3EC] p-6 ' +
+                    'flex h-full flex-col gap-3 rounded-xl border border-[#241019]/10 bg-[#F6F3EC] p-6 ' +
                     (c.href
-                      ? 'transition-all duration-200 hover:-translate-y-0.5 hover:border-[#B7892E]/40 hover:shadow-lg cursor-pointer'
+                      ? 'transition-all duration-200 hover:-translate-y-0.5 hover:border-[#7A1B47]/40 hover:shadow-lg cursor-pointer'
                       : '')
                   }
                 >
-                  <span className="inline-grid h-11 w-11 place-items-center rounded-lg bg-[#14233B] text-[#B7892E]">
+                  <span className="inline-grid h-11 w-11 place-items-center rounded-lg bg-[#241019] text-[#7A1B47]">
                     <c.icon className="h-5 w-5" />
                   </span>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wide text-[#8a93a3]">{c.label}</p>
-                    <p className="mt-1 font-sans font-bold text-[#14233B]">{c.value}</p>
+                    <p className="text-xs font-bold uppercase tracking-wide text-[#6E5A63]">{c.label}</p>
+                    <p className="mt-1 font-sans font-bold text-[#241019]">{c.value}</p>
                   </div>
                 </Tag>
               </Reveal>
@@ -85,24 +85,24 @@ export default function Contacto() {
       <section className="bg-[#FFFFFF] pb-10 pt-4">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
-            <div className="flex flex-col gap-3 rounded-xl border border-[#14233B]/10 bg-[#F6F3EC] p-4 sm:flex-row">
+            <div className="flex flex-col gap-3 rounded-xl border border-[#241019]/10 bg-[#F6F3EC] p-4 sm:flex-row">
               <a
                 href={brand.phoneHref}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#14233B] px-5 py-3 font-sans text-sm font-bold text-[#F6F3EC] transition-colors hover:bg-[#1b2c45] cursor-pointer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#241019] px-5 py-3 font-sans text-sm font-bold text-[#F6F3EC] transition-colors hover:bg-[#3A1228] cursor-pointer"
               >
-                <Phone className="h-4 w-4 text-[#B7892E]" /> {brand.phoneDisplay}
+                <Phone className="h-4 w-4 text-[#7A1B47]" /> {brand.phoneDisplay}
               </a>
               <a
                 href={brand.landlineHref}
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-[#14233B]/15 bg-[#FFFFFF] px-5 py-3 font-sans text-sm font-bold text-[#14233B] transition-colors hover:border-[#B7892E]/50 cursor-pointer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md border border-[#241019]/15 bg-[#FFFFFF] px-5 py-3 font-sans text-sm font-bold text-[#241019] transition-colors hover:border-[#7A1B47]/50 cursor-pointer"
               >
-                <Phone className="h-4 w-4 text-[#B7892E]" /> {brand.landlineDisplay}
+                <Phone className="h-4 w-4 text-[#7A1B47]" /> {brand.landlineDisplay}
               </a>
               <a
                 href={brand.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#B7892E] px-5 py-3 font-sans text-sm font-bold text-[#14233B] transition-colors hover:bg-[#a2792a] cursor-pointer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-md bg-[#7A1B47] px-5 py-3 font-sans text-sm font-bold text-[#F6F3EC] transition-colors hover:bg-[#66163C] cursor-pointer"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
@@ -116,24 +116,24 @@ export default function Contacto() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-2">
           {/* Form */}
           <Reveal>
-            <div className="rounded-2xl border border-[#14233B]/10 bg-[#F6F3EC] p-8 sm:p-10">
-              <h2 className="font-playfair text-2xl font-semibold text-[#14233B]">Pedir avaliação / contacto</h2>
-              <p className="mt-2 text-sm text-[#5A6577]">
+            <div className="rounded-2xl border border-[#241019]/10 bg-[#F6F3EC] p-8 sm:p-10">
+              <h2 className="font-playfair text-2xl font-semibold text-[#241019]">Pedir avaliação / contacto</h2>
+              <p className="mt-2 text-sm text-[#5A4750]">
                 Preencha e entramos em contacto consigo. Sem compromisso.
               </p>
 
               {sent ? (
-                <div className="mt-8 flex flex-col items-center gap-4 rounded-xl bg-[#14233B] p-10 text-center text-[#F6F3EC]">
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#B7892E] text-[#14233B]">
+                <div className="mt-8 flex flex-col items-center gap-4 rounded-xl bg-[#241019] p-10 text-center text-[#F6F3EC]">
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-[#7A1B47] text-[#F6F3EC]">
                     <Check className="h-7 w-7" strokeWidth={3} />
                   </span>
                   <p className="font-playfair text-xl font-semibold">Pedido enviado!</p>
-                  <p className="text-sm text-[#bcc6d4]">
+                  <p className="text-sm text-[#D8C2CC]">
                     Obrigado, {form.nome || 'pelo seu contacto'}. A Marta entrará em contacto consigo brevemente.
                   </p>
                   <button
                     onClick={() => setSent(false)}
-                    className="mt-2 text-sm font-semibold text-[#B7892E] underline-offset-4 hover:underline cursor-pointer"
+                    className="mt-2 text-sm font-semibold text-[#7A1B47] underline-offset-4 hover:underline cursor-pointer"
                   >
                     Enviar outro pedido
                   </button>
@@ -154,14 +154,14 @@ export default function Contacto() {
 
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
-                      <label htmlFor="assunto" className="mb-2 block font-sans text-sm font-bold text-[#14233B]">
+                      <label htmlFor="assunto" className="mb-2 block font-sans text-sm font-bold text-[#241019]">
                         Assunto
                       </label>
                       <select
                         id="assunto"
                         value={form.assunto}
                         onChange={update('assunto')}
-                        className="w-full rounded-lg border border-[#14233B]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#14233B] outline-none transition-colors focus:border-[#B7892E] focus:ring-2 focus:ring-[#B7892E]/30 cursor-pointer"
+                        className="w-full rounded-lg border border-[#241019]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#241019] outline-none transition-colors focus:border-[#7A1B47] focus:ring-2 focus:ring-[#7A1B47]/30 cursor-pointer"
                       >
                         <option>Pedir avaliação</option>
                         <option>Comprar</option>
@@ -181,7 +181,7 @@ export default function Contacto() {
                   </div>
 
                   <div>
-                    <label htmlFor="mensagem" className="mb-2 block font-sans text-sm font-bold text-[#14233B]">
+                    <label htmlFor="mensagem" className="mb-2 block font-sans text-sm font-bold text-[#241019]">
                       Mensagem
                     </label>
                     <textarea
@@ -191,16 +191,16 @@ export default function Contacto() {
                       value={form.mensagem}
                       onChange={update('mensagem')}
                       placeholder="Conte-nos como o podemos ajudar."
-                      className="w-full rounded-lg border border-[#14233B]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#14233B] outline-none transition-colors placeholder:text-[#9aa6b6] focus:border-[#B7892E] focus:ring-2 focus:ring-[#B7892E]/30"
+                      className="w-full rounded-lg border border-[#241019]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#241019] outline-none transition-colors placeholder:text-[#C0A2AF] focus:border-[#7A1B47] focus:ring-2 focus:ring-[#7A1B47]/30"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#14233B] px-7 py-3.5 font-sans text-base font-bold text-[#F6F3EC] transition-colors hover:bg-[#1b2c45] cursor-pointer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#241019] px-7 py-3.5 font-sans text-base font-bold text-[#F6F3EC] transition-colors hover:bg-[#3A1228] cursor-pointer"
                   >
-                    <Mail className="h-4 w-4 text-[#B7892E]" /> Enviar pedido
+                    <Mail className="h-4 w-4 text-[#7A1B47]" /> Enviar pedido
                   </button>
-                  <p className="text-center text-xs text-[#8a93a3]">
+                  <p className="text-center text-xs text-[#6E5A63]">
                     Formulário de demonstração — não envia dados. Para marcações imediatas, ligue {brand.phoneDisplay}.
                   </p>
                 </form>
@@ -211,7 +211,7 @@ export default function Contacto() {
           {/* Map + hours */}
           <Reveal delay={120}>
             <div className="flex h-full flex-col gap-6">
-              <div className="overflow-hidden rounded-2xl border border-[#14233B]/10">
+              <div className="overflow-hidden rounded-2xl border border-[#241019]/10">
                 <iframe
                   title="Mapa — ImoBenfica by Marta Pereira"
                   src={`https://www.google.com/maps?q=${encodeURIComponent(brand.mapsQuery)}&output=embed`}
@@ -221,23 +221,23 @@ export default function Contacto() {
                 />
               </div>
 
-              <div className="rounded-2xl border border-[#14233B]/10 bg-[#F6F3EC] p-7">
+              <div className="rounded-2xl border border-[#241019]/10 bg-[#F6F3EC] p-7">
                 <div className="flex items-center gap-3">
-                  <span className="inline-grid h-10 w-10 place-items-center rounded-lg bg-[#14233B] text-[#B7892E]">
+                  <span className="inline-grid h-10 w-10 place-items-center rounded-lg bg-[#241019] text-[#7A1B47]">
                     <Clock className="h-5 w-5" />
                   </span>
-                  <h3 className="font-playfair text-xl font-semibold text-[#14233B]">Horário</h3>
+                  <h3 className="font-playfair text-xl font-semibold text-[#241019]">Horário</h3>
                 </div>
-                <ul className="mt-5 divide-y divide-[#14233B]/10">
+                <ul className="mt-5 divide-y divide-[#241019]/10">
                   {brand.hoursLines.map((h) => (
                     <li key={h.day} className="flex items-center justify-between py-2.5 text-sm">
-                      <span className="font-semibold text-[#14233B]">{h.day}</span>
-                      <span className="text-[#5A6577]">{h.time}</span>
+                      <span className="font-semibold text-[#241019]">{h.day}</span>
+                      <span className="text-[#5A4750]">{h.time}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-5 flex items-center gap-2 border-t border-[#14233B]/10 pt-4 text-sm text-[#5A6577]">
-                  <MapPin className="h-4 w-4 text-[#B7892E]" /> {brand.address}
+                <p className="mt-5 flex items-center gap-2 border-t border-[#241019]/10 pt-4 text-sm text-[#5A4750]">
+                  <MapPin className="h-4 w-4 text-[#7A1B47]" /> {brand.address}
                 </p>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function Contacto() {
 function Field({ id, label, type = 'text', placeholder, value, onChange, required = true }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block font-sans text-sm font-bold text-[#14233B]">
+      <label htmlFor={id} className="mb-2 block font-sans text-sm font-bold text-[#241019]">
         {label}
       </label>
       <input
@@ -261,7 +261,7 @@ function Field({ id, label, type = 'text', placeholder, value, onChange, require
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-[#14233B]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#14233B] outline-none transition-colors placeholder:text-[#9aa6b6] focus:border-[#B7892E] focus:ring-2 focus:ring-[#B7892E]/30"
+        className="w-full rounded-lg border border-[#241019]/15 bg-[#FFFFFF] px-4 py-3 font-sans text-[#241019] outline-none transition-colors placeholder:text-[#C0A2AF] focus:border-[#7A1B47] focus:ring-2 focus:ring-[#7A1B47]/30"
       />
     </div>
   )

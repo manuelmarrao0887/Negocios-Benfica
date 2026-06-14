@@ -29,6 +29,7 @@ const SITES = {
   'tantos-livros': ['', 'catalogo', 'sobre', 'contacto'],
   'clinica-das-avenidas': ['', 'tratamentos', 'sobre', 'contacto'],
   'pmm-advogados': ['', 'areas', 'sobre', 'contacto'],
+  dentofisis: ['', 'tratamentos', 'sobre', 'contacto'],
 }
 
 const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' })

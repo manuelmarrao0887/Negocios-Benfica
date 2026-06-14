@@ -457,7 +457,7 @@ export const APPS = {
   'suelen-cunha': lazy(() => import('./suelen-cunha/index.jsx')),
   'tantos-livros': lazy(() => import('./tantos-livros/index.jsx')),
   'clinica-das-avenidas': lazy(() => import('./clinica-das-avenidas/index.jsx')),
-  // dentofisis: incompleto (limite de sessão) — a terminar
+  dentofisis: lazy(() => import('./dentofisis/index.jsx')),
 }
 
 export const sites = META.map((m) => ({

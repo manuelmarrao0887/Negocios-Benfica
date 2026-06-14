@@ -20,6 +20,15 @@ const SITES = {
   doublespace: ['', 'servicos', 'sobre', 'contacto'],
   'linda-mulher': ['', 'servicos', 'sobre', 'contacto'],
   imobenfica: ['', 'imoveis', 'sobre', 'contacto'],
+  // Avenidas Novas
+  factiva: ['', 'servicos', 'sobre', 'contacto'],
+  'nova-dentismed': ['', 'tratamentos', 'sobre', 'contacto'],
+  'value-advantage': ['', 'servicos', 'sobre', 'contacto'],
+  'artz-hair': ['', 'servicos', 'sobre', 'contacto'],
+  'suelen-cunha': ['', 'areas', 'sobre', 'contacto'],
+  'tantos-livros': ['', 'catalogo', 'sobre', 'contacto'],
+  'clinica-das-avenidas': ['', 'tratamentos', 'sobre', 'contacto'],
+  'pmm-advogados': ['', 'areas', 'sobre', 'contacto'],
 }
 
 const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' })

@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react'
 import { MapPin, ArrowDown, Check } from 'lucide-react'
-import { META, groups } from '../sites/registry.jsx'
+import { sites, groups, zones } from '../sites/registry.jsx'
 import { usePageMeta } from '../shared/hooks'
 import { cn } from '../shared/utils'
 import { Reveal } from '../shared/Reveal'
 import SiteCard from './SiteCard.jsx'
 
 const DOMAINS = {
+  // Calçada do Tojal
   filipitsch: 'filipitsch.pt',
   'reparacao-tv-lisboa': 'reparacaotvlisboa.pt',
   'pedrita-studio': 'pedrita.net',
@@ -20,18 +21,46 @@ const DOMAINS = {
   doublespace: 'double-space.eu',
   'linda-mulher': 'lindamulherstudio.com',
   imobenfica: 'imobenfica.pt',
+  // Avenidas Novas
+  factiva: 'factiva.pt',
+  'nova-dentismed': 'novadentismed.com',
+  'value-advantage': 'valueadvantage.pt',
+  'artz-hair': 'artzhair.com',
+  'suelen-cunha': 'advogadasuelencunha.com',
+  'tantos-livros': 'tantoslivroslivreiros.pt',
+  dentofisis: 'dentofisis.pt',
+  'clinica-das-avenidas': 'clinicadasavenidas.com',
+  'pmm-advogados': 'pmmadvogados.pt',
+  'vitorias-beauty': 'vitoriasbeauty.pt',
+  'o-rialva': 'orialva.pt',
+  'good-company-books': 'goodcompanybooks.pt',
+  'tasca-do-fonseca': 'tascadofonseca.pt',
+  'tasquinha-dos-grelhados': 'tasquinhadosgrelhados.pt',
+  'cabeleireiro-nogueira': 'cabeleireironogueira.pt',
+  'estetica-nice': 'esteticanice.pt',
+  'neia-souza': 'neiasouza.pt',
+  'alex-cabeleireiro': 'alexcabeleireiro.pt',
+  'good-company-cafe': 'goodcompanycafe.pt',
+  'aml-advogados': 'amladvogados.pt',
 }
 
 export default function Portfolio() {
   usePageMeta(
     'ProofStudio — Portfólio de Websites',
-    'ProofStudio · Rebuild de 13 websites de negócios da zona da Calçada do Tojal, Benfica/Carnide, Lisboa.',
+    'ProofStudio · Rebuild de websites de negócios locais de Lisboa — Calçada do Tojal (Benfica) e Avenidas Novas.',
   )
-  const [active, setActive] = useState('Todos')
+  const [zone, setZone] = useState('Todas')
+  const [group, setGroup] = useState('Todos')
+
+  const countFor = (z, g) =>
+    sites.filter((s) => (z === 'Todas' || s.zone === z) && (g === 'Todos' || s.group === g)).length
 
   const filtered = useMemo(
-    () => (active === 'Todos' ? META : META.filter((m) => m.group === active)),
-    [active],
+    () =>
+      sites.filter(
+        (s) => (zone === 'Todas' || s.zone === zone) && (group === 'Todos' || s.group === group),
+      ),
+    [zone, group],
   )
 
   return (
@@ -64,7 +93,7 @@ export default function Portfolio() {
             </span>
           </div>
           <span className="hidden items-center gap-1.5 text-sm text-neutral-400 sm:flex">
-            <MapPin className="h-4 w-4" /> Benfica · Carnide, Lisboa
+            <MapPin className="h-4 w-4" /> Lisboa
           </span>
         </header>
 
@@ -73,12 +102,12 @@ export default function Portfolio() {
           <Reveal>
             <p className="flex items-center gap-2 font-space text-sm font-medium uppercase tracking-[0.2em] text-lime-300/90">
               <span className="h-px w-8 bg-lime-300/50" />
-              Calçada do Tojal · Rebuild de Websites
+              Negócios locais de Lisboa · Rebuild de Websites
             </p>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="mt-5 max-w-4xl font-space text-5xl font-bold leading-[1.02] tracking-tight text-balance sm:text-6xl md:text-7xl">
-              Treze negócios locais,
+              Negócios locais,
               <span className="bg-gradient-to-r from-lime-200 via-white to-emerald-200 bg-clip-text text-transparent">
                 {' '}reimaginados online.
               </span>
@@ -86,63 +115,96 @@ export default function Portfolio() {
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-300">
-              A <span className="font-semibold text-white">ProofStudio</span> redesenhou os websites dos
-              negócios da zona da Calçada do Tojal. Cada cartão abre um site completo, com identidade
-              própria. Escolha um para explorar.
+              A <span className="font-semibold text-white">ProofStudio</span> redesenhou os websites de
+              negócios de duas zonas de Lisboa — a Calçada do Tojal (Benfica) e as Avenidas Novas. Cada
+              cartão abre um site completo, com identidade própria. Filtre por zona ou setor.
             </p>
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-neutral-400">
               <span className="flex items-center gap-2">
-                <span className="font-space text-2xl font-bold text-white">13</span> negócios
+                <span className="font-space text-2xl font-bold text-white">{sites.length}</span> negócios
               </span>
               <span className="h-4 w-px bg-white/15" />
               <span className="flex items-center gap-2">
-                <span className="font-space text-2xl font-bold text-white">4</span> setores
+                <span className="font-space text-2xl font-bold text-white">{zones.length - 1}</span> zonas
               </span>
               <span className="h-4 w-px bg-white/15" />
-              <span className="flex items-center gap-2 text-neutral-400">
-                <ArrowDown className="h-4 w-4 animate-bounce" /> selecione um negócio
+              <span className="flex items-center gap-2">
+                <span className="font-space text-2xl font-bold text-white">{groups.length - 1}</span> setores
               </span>
             </div>
           </Reveal>
         </section>
 
         {/* Filters */}
-        <div className="sticky top-0 z-20 border-y border-white/10 bg-neutral-950/80 backdrop-blur-md">
-          <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto px-6 py-3.5">
-            {groups.map((g) => (
-              <button
-                key={g}
-                onClick={() => setActive(g)}
-                className={cn(
-                  'shrink-0 cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200',
-                  active === g
-                    ? 'bg-white text-neutral-950'
-                    : 'bg-white/5 text-neutral-300 ring-1 ring-white/10 hover:bg-white/10',
-                )}
-              >
-                {g}
-                <span className={cn('ml-2 text-xs', active === g ? 'text-neutral-500' : 'text-neutral-500')}>
-                  {g === 'Todos' ? META.length : META.filter((m) => m.group === g).length}
-                </span>
-              </button>
-            ))}
+        <div className="sticky top-0 z-20 border-y border-white/10 bg-neutral-950/85 backdrop-blur-md">
+          <div className="mx-auto max-w-7xl space-y-2.5 px-6 py-3.5">
+            {/* Zona */}
+            <div className="flex items-center gap-2 overflow-x-auto">
+              <span className="mr-1 shrink-0 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                Zona
+              </span>
+              {zones.map((z) => (
+                <button
+                  key={z}
+                  onClick={() => setZone(z)}
+                  className={cn(
+                    'shrink-0 cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200',
+                    zone === z
+                      ? 'bg-lime-300 text-neutral-950'
+                      : 'bg-white/5 text-neutral-300 ring-1 ring-white/10 hover:bg-white/10',
+                  )}
+                >
+                  {z}
+                  <span className={cn('ml-2 text-xs', zone === z ? 'text-neutral-600' : 'text-neutral-500')}>
+                    {countFor(z, group)}
+                  </span>
+                </button>
+              ))}
+            </div>
+            {/* Setor */}
+            <div className="flex items-center gap-2 overflow-x-auto">
+              <span className="mr-1 shrink-0 text-[11px] font-bold uppercase tracking-wider text-neutral-500">
+                Setor
+              </span>
+              {groups.map((g) => (
+                <button
+                  key={g}
+                  onClick={() => setGroup(g)}
+                  className={cn(
+                    'shrink-0 cursor-pointer rounded-full px-4 py-1.5 text-sm font-medium transition-colors duration-200',
+                    group === g
+                      ? 'bg-white text-neutral-950'
+                      : 'bg-white/5 text-neutral-300 ring-1 ring-white/10 hover:bg-white/10',
+                  )}
+                >
+                  {g}
+                  <span className="ml-2 text-xs text-neutral-500">{countFor(zone, g)}</span>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Grid */}
         <section className="mx-auto max-w-7xl px-6 py-12">
-          <div
-            key={active}
-            className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {filtered.map((site, i) => (
-              <Reveal key={site.slug} delay={(i % 3) * 80}>
-                <SiteCard site={site} domain={DOMAINS[site.slug]} index={i} />
-              </Reveal>
-            ))}
-          </div>
+          {filtered.length === 0 ? (
+            <p className="py-20 text-center text-neutral-500">
+              Nenhum negócio nesta combinação de filtros.
+            </p>
+          ) : (
+            <div
+              key={`${zone}|${group}`}
+              className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {filtered.map((site, i) => (
+                <Reveal key={site.slug} delay={(i % 3) * 80}>
+                  <SiteCard site={site} domain={DOMAINS[site.slug]} index={i} />
+                </Reveal>
+              ))}
+            </div>
+          )}
         </section>
 
         {/* Footer */}
